@@ -1,0 +1,9 @@
+.hero-cover {
+  background: linear-gradient(180deg, #01071a 0%, #040e2e 100%);
+}
+
+.hero-cover-bg {
+  background: url(./eclipse2.png);
+  background-size: 100%;
+  background-position: right;
+}
