@@ -2,11 +2,17 @@ import HelloImage from "../../styles/hero/hello.png";
 import HeroUiImage from "../../styles/hero/ui_ux_image.png";
 import HeroUiImageFrame from "../../styles/hero/hero_image_frame.png";
 import HeroImageShadow from "./HeroImageShadow";
+import TinyFilledBox from "./TinyFilledBox";
+import TinyOpaqueBox from "./TinyBorderedBox";
 export default function Main() {
   return (
     <>
       <div className="absolute -translate-y-1/2 top-1/2 left-0 right-0 z-10">
         <HeroImageShadow />
+        <TinyFilledBox right={"10%"} top={"5%"} width={"60px"} />
+        <TinyOpaqueBox right={"25%"} top={"5%"} width={"50px"} />
+        <TinyOpaqueBox right={"45%"} top={"60%"} width={"95px"} />
+        <TinyFilledBox right={"12%"} top={"28%"} width={"75px"} />
         <div className="hello absolute top-[50px] left-[100px] z-[1] max-[830px]:left-[60px] max-[830px]:top-[35px]">
           <img
             src={HelloImage}
