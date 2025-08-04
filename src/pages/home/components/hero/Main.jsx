@@ -21,16 +21,16 @@ export default function Main() {
         </div>
         <div className="relative flex z-10">
           {/* Hero Text Div Controller */}
-          <div className="left w-[48%] h-[75vh] px-[75px] max-[830px]:px-[50px] max-[700px]:px-[30px] bg-yellow-00">
+          <div className="relative z-10 left w-[48%] h-[75vh] px-[75px] max-[830px]:px-[50px] max-[700px]:px-[30px] bg-yellow-00">
             <div className="relative grid gap-1 box-border w-[350px] max-[830px]:w-[300px] py-[25px] text-[15px] -translate-y-1/2 top-[55%]">
-              <p className="text-white font-[400] text-[16px]">
+              <p className="text-white font-montserrat font-[400] text-[13px]">
                 UI/UX Designer
               </p>
-              <p className="text-[38px] text-white font-sans font-bold">
+              <p className="text-[38px] text-white font-montserrat font-bold">
                 Hi There, I’m
                 <br /> <span className="text-[#175DC2]">Miracle John</span>
               </p>
-              <p className="text-white font-light text-[15px]">
+              <p className="text-white font-montserrat font-light text-[13px]">
                 Welcome to my portfolio of captivating User Interface and
                 Experience (UI/UX) Design. Explore my work and let's create
                 something extraordinary together.
@@ -38,14 +38,14 @@ export default function Main() {
 
               <div className="flex gap-2 mt-7">
                 <a
-                  className="bg-[#175DC2] text-white text-[10px] font-sans font-semibold p-[6px] w-[120px] rounded-full block text-center"
+                  className="bg-[#175DC2] text-white text-[10px] font-montserrat font-semibold p-[6px] w-[120px] rounded-full block text-center"
                   href=""
                 >
                   {" "}
                   Hire Me{" "}
                 </a>
                 <a
-                  className="bg-white text-[#1F1F1F] text-[10px] font-sans font-bold p-[6px] w-[120px] rounded-full block text-center"
+                  className="bg-white text-[#1F1F1F] text-[10px] font-montserrat font-bold p-[6px] w-[120px] rounded-full block text-center"
                   href=""
                 >
                   {" "}
