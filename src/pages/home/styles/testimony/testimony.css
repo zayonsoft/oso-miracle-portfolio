@@ -1,0 +1,11 @@
+.testimony-scrollbar::-webkit-scrollbar {
+  width: 5px;
+}
+
+.testimony-scrollbar::-webkit-scrollbar-button {
+  background-color: transparent;
+}
+.testimony-scrollbar::-webkit-scrollbar-thumb {
+  background-color: #606060;
+  border-radius: 30px;
+}

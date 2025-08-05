@@ -16,6 +16,26 @@
   font-style: italic;
 }
 
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter/Inter-Italic-VariableFont_opsz_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Inter";
+  src: url("./assets/fonts/Inter/Inter-VariableFont_opsz_wght.ttf")
+    format("truetype");
+  font-weight: 100 900;
+  font-style: normal;
+}
+
 .font-montserrat {
   font-family: montserrat;
+}
+
+.font-inter {
+  font-family: inter;
 }

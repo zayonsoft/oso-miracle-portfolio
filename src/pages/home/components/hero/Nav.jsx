@@ -1,4 +1,4 @@
-import logo from "../../styles/hero/logo.png";
+import logo from "../../styles/hero/logo.svg";
 import { Menu, X } from "lucide-react";
 import List from "./List";
 import { useRef, useState, useEffect } from "react";

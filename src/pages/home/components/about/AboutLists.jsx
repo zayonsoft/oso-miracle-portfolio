@@ -52,9 +52,9 @@ export default function AboutLists() {
   ];
   const [aboutMe, setAboutMe] = useState(aboutList);
   return (
-    <div className="grid gap-2.5">
+    <div className="font-inter grid gap-2.5">
       {aboutMe.map((list) => (
-        <AboutList id={uuidv4()} text={list.text} />
+        <AboutList key={uuidv4()} text={list.text} />
       ))}
     </div>
   );

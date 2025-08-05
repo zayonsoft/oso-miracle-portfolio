@@ -1,5 +1,5 @@
-import SkillImage from "../../styles/skill/skill_image.png";
-import "../../styles/skill/skills.css";
+import SkillImage from "../styles/skill/skill_image.svg";
+import "../styles/skill/skills.css";
 export default function SkillSection() {
   return (
     <section className="grid content-center min-h-screen w-full bg-white">
