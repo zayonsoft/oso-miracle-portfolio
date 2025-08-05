@@ -19,9 +19,3 @@
 .font-montserrat {
   font-family: montserrat;
 }
-
-.skills-bg {
-  background: url(./pages/home/styles/skill/skill_bg.png);
-  background-size: cover;
-  background-position: center;
-}
