@@ -1,5 +1,6 @@
 import AboutMe from "./components/AboutMe";
 import CoreDesignSkills from "./components/CoreDesignSkills";
+import Footer from "./components/Footer";
 import Hero from "./components/Hero";
 import MyWorksSection from "./components/MyWorksSection";
 import NeedADesignPatner from "./components/NeedADesignPatner";
@@ -11,14 +12,17 @@ import TestimonySection from "./components/TestimonySection";
 export default function Home() {
   return (
     <>
-      <Hero />
-      <AboutMe />
-      <SkillSection />
-      <CoreDesignSkills />
-      <ServiceSection />
-      <MyWorksSection />
-      <TestimonySection />
-      <NeedADesignPatner />
+      <section className="home-overlay">
+        <Hero />
+        <AboutMe />
+        <SkillSection />
+        <CoreDesignSkills />
+        <ServiceSection />
+        <MyWorksSection />
+        <TestimonySection />
+        <NeedADesignPatner />
+        <Footer />
+      </section>
     </>
   );
 }

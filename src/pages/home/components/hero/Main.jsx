@@ -38,14 +38,14 @@ export default function Main() {
 
               <div className="flex gap-2 mt-7">
                 <a
-                  className="bg-[#175DC2] text-white text-[10px] font-montserrat font-semibold p-[6px] w-[120px] rounded-full block text-center"
+                  className="bg-[#175DC2] text-white text-[11px] font-montserrat font-semibold p-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#175DC299]"
                   href=""
                 >
                   {" "}
                   Hire Me{" "}
                 </a>
                 <a
-                  className="bg-white text-[#1F1F1F] text-[10px] font-montserrat font-bold p-[6px] w-[120px] rounded-full block text-center"
+                  className="bg-white text-[#1F1F1F] text-[11px] font-montserrat font-bold px-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#FFFFFF99]"
                   href=""
                 >
                   {" "}

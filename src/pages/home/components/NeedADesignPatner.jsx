@@ -6,16 +6,16 @@ export default function NeedADesignPatner() {
           Looking for a Design Partner? <br /> Let’s Get Started
         </h1>
       </div>
-      <div className="flex m-auto gap-2 mt-7">
+      <div className="flex m-auto gap-2 mt-7 items-center">
         <a
-          className="bg-[#175DC2] text-white text-[10px] font-montserrat font-semibold p-[6px] w-[120px] rounded-full block text-center"
+          className="bg-[#175DC2] text-white text-[11px] font-montserrat font-semibold p-[6px] py-[9px] w-[120px] rounded-full block text-center"
           href=""
         >
           {" "}
           Hire Me{" "}
         </a>
         <a
-          className="bg-white text-[#1F1F1F] text-[10px] font-montserrat font-bold p-[6px] w-[120px] rounded-full block text-center"
+          className="bg-white text-[#1F1F1F] text-[11px] font-montserrat font-bold px-[6px] py-[9px] w-[120px] rounded-full block text-center"
           href=""
         >
           {" "}
@@ -23,11 +23,11 @@ export default function NeedADesignPatner() {
         </a>
       </div>
       <div className="m-auto flex gap-2 items-center flex-wrap ">
-        <hr className="block border-0 w-6 h-0.5 bg-white rounded-sm" />
+        <hr className="block border-0 w-7 h-[1px] bg-white rounded-sm" />
         <p className="text-white font-inter text-sm font-light">
           Available for new projects
         </p>
-        <hr className="block border-0 w-6 h-0.5 bg-white rounded-sm" />
+        <hr className="block border-0 w-7 h-[1px] bg-white rounded-sm" />
       </div>
     </section>
   );

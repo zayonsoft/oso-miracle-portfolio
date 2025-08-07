@@ -31,7 +31,7 @@ export default function Testimonies() {
   ];
   const [testimonies, setTestimonies] = useState(testimonyList);
   return (
-    <section className="grid m-auto gap-10 justify-center  grid-cols-2">
+    <section className="grid m-auto gap-10 justify-center  grid-cols-2 max-[571px]:grid-cols-1 max-[571px]:gap-5">
       {testimonies.map((t) => (
         <Testimony
           key={uuidv4()}

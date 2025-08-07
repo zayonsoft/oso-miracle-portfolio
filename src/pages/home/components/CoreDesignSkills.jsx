@@ -3,7 +3,7 @@ import Skills from "./cds/Skills";
 
 export default function CoreDesignSkills() {
   return (
-    <section className="grid gap-3 px-[75px] py-20 max-[830px]:px-[50px] max-[700px]:px-[30px]">
+    <section className="bg-white grid gap-3 px-[75px] py-20 max-[830px]:px-[50px] max-[700px]:px-[30px]">
       <div className="font-montserrat grid gap-4 w-[90%] max-w-[700px] m-auto">
         <h1 className="text-center font-bold text-2xl">Core Design Skiils</h1>
         <p className="text-[13px] text-center">

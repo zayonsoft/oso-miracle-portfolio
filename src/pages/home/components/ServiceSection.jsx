@@ -2,7 +2,7 @@ import Services from "./services/Services";
 
 export default function ServiceSection() {
   return (
-    <section className="py-20">
+    <section className="bg-white py-20">
       <div className="grid gap-5 w-11/12 max-w-2xl m-auto">
         <h1 className="font-montserrat text-2xl font-bold text-center">
           Services

@@ -1,6 +1,7 @@
 import AboutList from "./AboutList";
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
+import { motion } from "framer-motion";
 
 export default function AboutLists() {
   let aboutList = [
@@ -50,12 +51,32 @@ export default function AboutLists() {
       text: "Led brainstorming sessions to develop innovative design concepts.",
     },
   ];
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.4,
+      },
+    },
+  };
+
+  const childVariants = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const [aboutMe, setAboutMe] = useState(aboutList);
   return (
-    <div className="font-inter grid gap-2.5">
+    <motion.div
+      variants={containerVariants}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      className="font-inter grid gap-2.5"
+    >
       {aboutMe.map((list) => (
-        <AboutList key={uuidv4()} text={list.text} />
+        <AboutList key={uuidv4()} text={list.text} variant={childVariants} />
       ))}
-    </div>
+    </motion.div>
   );
 }

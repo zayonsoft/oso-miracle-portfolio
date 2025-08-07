@@ -1,0 +1,6 @@
+.gradient-border {
+  background: linear-gradient(180deg, #175dc2 0%, #04123b 100%);
+  padding: 4px;
+  border-radius: 9999px; /* full round */
+  display: inline-block;
+}
