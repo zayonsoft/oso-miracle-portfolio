@@ -1,8 +1,12 @@
-import DemoImage from "../../styles/works/propifix.png";
+import { useNavigate, Link } from "react-router-dom";
 import "../../styles/works/works.css";
 import { ArrowRight } from "lucide-react";
 
 export default function Work(props) {
+  const navigate = useNavigate();
+  function navigateToProject() {
+    navigate("/projects_demo");
+  }
   return (
     <section className="grid gap-2 border-[1px] border-[#00000099] rounded-4xl m-auto grid-cols-2 p-4 font-montserrat content-center max-w-[850px] max-[571px]:grid-cols-1">
       <div className="grid gap-8 max-[571px]:order-2">
@@ -20,8 +24,14 @@ export default function Work(props) {
           </p>
         </div>
         <p className="self-end">
-          <button className="flex text-sm border-[#000000] w-[150px] justify-center cursor-pointer hover:bg-[#175DC2] hover:border-[#175DC2] hover:text-white font-semibold border-[1px] px-1.5 py-2 rounded-full gap-2 max-[571px]:w-full">
-            <span className="text-[12px]">View Project</span>{" "}
+          <button
+            onClick={navigateToProject}
+            className="flex text-sm border-[#000000] w-[150px] justify-center cursor-pointer hover:bg-[#175DC2] hover:border-[#175DC2] hover:text-white font-semibold border-[1px] px-1.5 py-2 rounded-full gap-2 max-[571px]:w-full"
+          >
+            <span className="text-[12px]">
+              {" "}
+              <Link to={"projects_demo"}> View Project</Link>
+            </span>{" "}
             <span className="grid self-center">
               <ArrowRight size={14} />
             </span>

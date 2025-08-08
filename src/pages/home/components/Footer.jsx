@@ -41,25 +41,22 @@ export default function Footer() {
         ))}
       </div>
       <section className="grid content-center relative bg-[#121212] p-4 font-poppins font-normal text-white text-center">
-        <div>
+        <div className="text-sm">
           © 2025 <span className="font-semibold text-[#175DC2]">RIVERT</span>{" "}
           DESIGN All Rights Reserved , Inc.
         </div>
-        <div className="absolute justify-self-end self-center right-8">
+        <div className="absolute justify-self-end self-center right-4">
           <div className="gradient-border rounded-full">
             <button
-              className="text-white rounded-full w-12 h-12 text-center grid justify-center content-center bg-[#121212] cursor-pointer hover:bg-transparent"
+              className="text-white rounded-full w-8 h-8 text-center grid justify-center content-center bg-[#121212] cursor-pointer hover:bg-transparent"
               type="button"
             >
               {" "}
-              <ArrowUp />{" "}
+              <ArrowUp size={16} />{" "}
             </button>
           </div>
         </div>
       </section>
     </footer>
   );
-  //   border: 3px solid;
-
-  // border-image-source: linear-gradient(180deg, #175DC2 0%, #04123B 100%);
 }
