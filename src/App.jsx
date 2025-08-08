@@ -9,6 +9,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />}></Route>
       <Route path="/projects_demo" element={<ProjectsPage />}></Route>
+      <Route path="/my_project/:id" element={<ProjectsPage />}></Route>
     </Routes>
   );
 }

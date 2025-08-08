@@ -4,8 +4,9 @@ import { ArrowRight } from "lucide-react";
 
 export default function Work(props) {
   const navigate = useNavigate();
-  function navigateToProject() {
-    navigate("/projects_demo");
+
+  function navigateToProject(id) {
+    navigate(`/my_project/${id}`);
   }
   return (
     <section className="grid gap-2 border-[1px] border-[#00000099] rounded-4xl m-auto grid-cols-2 p-4 font-montserrat content-center max-w-[850px] max-[571px]:grid-cols-1">
@@ -25,13 +26,10 @@ export default function Work(props) {
         </div>
         <p className="self-end">
           <button
-            onClick={navigateToProject}
+            onClick={() => navigateToProject(props.id)}
             className="flex text-sm border-[#000000] w-[150px] justify-center cursor-pointer hover:bg-[#175DC2] hover:border-[#175DC2] hover:text-white font-semibold border-[1px] px-1.5 py-2 rounded-full gap-2 max-[571px]:w-full"
           >
-            <span className="text-[12px]">
-              {" "}
-              <Link to={"projects_demo"}> View Project</Link>
-            </span>{" "}
+            <span className="text-[12px]"> View Project</span>{" "}
             <span className="grid self-center">
               <ArrowRight size={14} />
             </span>

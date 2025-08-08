@@ -9,6 +9,8 @@ import Services from "./components/ServiceSection";
 import SkillSection from "./components/SkillSection";
 import TestimonySection from "./components/TestimonySection";
 
+import { createContext } from "react";
+
 export default function Home() {
   return (
     <>
