@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
+import { v4 } from "uuid";
 
 export default function VisualDesign() {
   const { currentProject } = useContext(ProjectContext);
@@ -31,7 +32,7 @@ export default function VisualDesign() {
       {currentProject.vdImage4?.length > 1 ? (
         <div className="flex gap-10">
           {currentProject.vdImage4?.map((img) => (
-            <div>
+            <div key={v4()}>
               <img className="m-auto" src={img} alt="" />
             </div>
           ))}
@@ -39,7 +40,7 @@ export default function VisualDesign() {
       ) : (
         <div>
           {currentProject.vdImage4?.map((img) => (
-            <img className="m-auto" src={img} alt="" />
+            <img key={v4()} className="m-auto" src={img} alt="" />
           ))}
         </div>
       )}

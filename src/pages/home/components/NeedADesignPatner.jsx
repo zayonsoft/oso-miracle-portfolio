@@ -1,6 +1,10 @@
-export default function NeedADesignPatner() {
+export default function NeedADesignPatner(props) {
   return (
-    <section className="grid gap-4 bg-[#01071A] px-5 py-7">
+    <section
+      style={{ scrollMarginTop: props.scrollMargin }}
+      id="contact"
+      className="grid gap-4 bg-[#01071A] px-5 py-7"
+    >
       <div className="w-[90%] max-w-[650px] m-auto font-semibold">
         <h1 className="text-white font-montserrat  text-3xl text-center leading-12">
           Looking for a Design Partner? <br /> Let’s Get Started

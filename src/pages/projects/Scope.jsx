@@ -1,6 +1,7 @@
 import ScopeIcon from "./styles/scope_icon.svg";
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
+import { v4 } from "uuid";
 
 export default function Scope() {
   const { currentProject } = useContext(ProjectContext);
@@ -16,7 +17,7 @@ export default function Scope() {
       </div>
       <div className="grid grid-cols-2 font-inter text-[13px] gap-10 content-center max-[650px]:grid-cols-1">
         {currentProject.scopeParagraphs?.map((pText) => (
-          <div className="grid gap-4">
+          <div key={v4()} className="grid gap-4">
             <span>
               <img className="w-8" src={ScopeIcon} alt="" />
             </span>

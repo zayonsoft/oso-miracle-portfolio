@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
+import { v4 } from "uuid";
 
 export default function Conclusion() {
   const { currentProject } = useContext(ProjectContext);
@@ -10,7 +11,10 @@ export default function Conclusion() {
           Conclusion
         </h1>
         {currentProject.conclusionParagrahs?.map((pText) => (
-          <p className="text-left font-inter text-[13px] font-normal">
+          <p
+            key={v4()}
+            className="text-left font-inter text-[13px] font-normal"
+          >
             {pText}
           </p>
         ))}

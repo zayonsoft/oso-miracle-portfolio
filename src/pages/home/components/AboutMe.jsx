@@ -1,9 +1,13 @@
 import AboutDetails from "./about/AboutDetails";
 import ProfileImage from "./about/ProfileImage";
 
-export default function AboutMe() {
+export default function AboutMe(props) {
   return (
-    <section className="grid gap-12 w-full h-full bg-white px-[75px] py-10 max-[830px]:px-[50px] max-[700px]:px-[30px]">
+    <section
+      style={{ scrollMarginTop: props.scrollMargin }}
+      id="about"
+      className="grid gap-12 w-full h-full bg-white px-[75px] py-10 max-[830px]:px-[50px] max-[700px]:px-[30px]"
+    >
       <div className="grid gap-5 w-11/12 max-w-2xl m-auto">
         <h1 className="font-montserrat text-2xl font-bold text-center">
           About Me

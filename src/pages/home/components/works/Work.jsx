@@ -1,6 +1,7 @@
 import { useNavigate, Link } from "react-router-dom";
 import "../../styles/works/works.css";
 import { ArrowRight } from "lucide-react";
+import { v4 } from "uuid";
 
 export default function Work(props) {
   const navigate = useNavigate();
@@ -18,7 +19,10 @@ export default function Work(props) {
           <p className="text-[12px]">{props.details}</p>
           <p className="text-[12px] flex flex-wrap gap-1 text-[#00000099]">
             {props.terms.map((term) => (
-              <span className="inline-block border-[#0000004D] border-[1px] px-1 py-1.5 rounded-4xl">
+              <span
+                key={v4()}
+                className="inline-block border-[#0000004D] border-[1px] px-1 py-1.5 rounded-4xl"
+              >
                 {term}
               </span>
             ))}

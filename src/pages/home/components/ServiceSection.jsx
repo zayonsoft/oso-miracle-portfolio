@@ -1,8 +1,12 @@
 import Services from "./services/Services";
 
-export default function ServiceSection() {
+export default function ServiceSection(props) {
   return (
-    <section className="bg-white py-20">
+    <section
+      style={{ scrollMarginTop: props.scrollMargin }}
+      id="services"
+      className="bg-white py-20"
+    >
       <div className="grid gap-5 w-11/12 max-w-2xl m-auto">
         <h1 className="font-montserrat text-2xl font-bold text-center">
           Services

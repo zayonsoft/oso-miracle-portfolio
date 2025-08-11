@@ -1,6 +1,7 @@
 import FigmaIcon from "./styles/figma_icon.svg";
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
+import { v4 } from "uuid";
 
 export default function Overview() {
   const { currentProject, setCurrentProject } = useContext(ProjectContext);
@@ -12,7 +13,10 @@ export default function Overview() {
         <h1 className="font-inter text-3xl font-normal text-left">Overview</h1>
 
         {currentProject.overviewParagraphs?.map((paragraphText) => (
-          <p className="text-left font-inter text-[13px] font-normal">
+          <p
+            key={v4()}
+            className="text-left font-inter text-[13px] font-normal"
+          >
             {" "}
             {paragraphText}{" "}
           </p>
@@ -24,7 +28,10 @@ export default function Overview() {
 
           <p className="text-[12px] flex flex-wrap gap-1 text-black">
             {currentProject.overviewIndustries?.map((industry) => (
-              <span className="inline-block border-[#000000] border-[1px] px-2 py-2.5 rounded-full">
+              <span
+                key={v4()}
+                className="inline-block border-[#000000] border-[1px] px-2 py-2.5 rounded-full"
+              >
                 {industry}
               </span>
             ))}

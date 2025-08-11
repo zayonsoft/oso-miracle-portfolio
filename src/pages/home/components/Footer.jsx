@@ -6,8 +6,16 @@ import { FaFacebookF } from "react-icons/fa";
 import { SiInstagram, SiWhatsapp, SiX } from "react-icons/si";
 import { ArrowUp } from "lucide-react";
 import "../styles/footer/footer.css";
+import { useNavigate } from "react-router-dom";
 
 export default function Footer() {
+  const navigate = useNavigate();
+  function scrollToTop(e) {
+    e.preventDefault();
+    window.scrollTo({ top: 0, behavior: "smooth" });
+    navigate("/");
+  }
+
   let neededIcons = [
     <FaFacebookF key={v4()} />,
     <SiInstagram key={v4()} />,
@@ -23,13 +31,13 @@ export default function Footer() {
         </div>
         <ul className="flex  gap-3 flex-wrap justify-evenly content-center text-white font-medium font-montserrat w-11/12 max-w-[700px] m-auto ">
           {navLinks.map((link) => (
-            <List key={v4()} name={link.name} />
+            <List key={v4()} navPath={link.path} name={link.name} />
           ))}
         </ul>
       </div>
       <div className="flex text-white gap-5 m-auto p-11">
         {neededIcons.map((icon) => (
-          <p>
+          <p key={v4()}>
             <a
               className="bg-white p-1.5 block text-black rounded-full border-[1px] border-white hover:bg-black hover:text-white"
               href=""
@@ -48,6 +56,7 @@ export default function Footer() {
         <div className="absolute justify-self-end self-center right-4">
           <div className="gradient-border rounded-full">
             <button
+              onClick={(e) => scrollToTop(e)}
               className="text-white rounded-full w-8 h-8 text-center grid justify-center content-center bg-[#121212] cursor-pointer hover:bg-transparent"
               type="button"
             >

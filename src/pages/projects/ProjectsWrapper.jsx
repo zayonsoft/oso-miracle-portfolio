@@ -10,6 +10,7 @@ import { useLocation, useParams } from "react-router-dom";
 import { AllProjectsData } from "./data/AllProjectsData";
 import { useContext, useEffect } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
+import NotFound from "../../NotFound";
 
 export default function ProjectWrapper() {
   const { id } = useParams();
@@ -19,14 +20,7 @@ export default function ProjectWrapper() {
     setCurrentProject(project || null);
   }, [id, currentProject, setCurrentProject]);
 
-  if (!currentProject)
-    return (
-      <div className="w-full h-screen bg-black grid content-center">
-        <h1 className="text-white text-center text-4xl font-montserrat">
-          PAGE NOT FOUND
-        </h1>
-      </div>
-    );
+  if (!currentProject) <NotFound />;
   if (currentProject.id == 0) {
     <div className="w-full h-screen bg-black grid content-center">
       <h1 className="text-white text-center text-4xl font-montserrat">

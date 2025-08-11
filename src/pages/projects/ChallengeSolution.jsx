@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
+import { v4 } from "uuid";
 
 export default function ChallengeSolution() {
   const { currentProject } = useContext(ProjectContext);
@@ -8,7 +9,10 @@ export default function ChallengeSolution() {
       <div className="grid gap-5 m-auto">
         <h1 className="font-inter text-3xl font-normal text-left">Challenge</h1>
         {currentProject.challengeParagrahs?.map((pText) => (
-          <p className="text-left font-inter text-[13px] font-normal">
+          <p
+            key={v4()}
+            className="text-left font-inter text-[13px] font-normal"
+          >
             {pText}
           </p>
         ))}
@@ -16,7 +20,10 @@ export default function ChallengeSolution() {
       <div className="grid gap-5 m-auto">
         <h1 className="font-inter text-3xl font-normal text-left">Solution</h1>
         {currentProject.solutionParagraphs?.map((pText) => (
-          <p className="text-left font-inter text-[13px] font-normal">
+          <p
+            key={v4()}
+            className="text-left font-inter text-[13px] font-normal"
+          >
             {pText}
           </p>
         ))}
