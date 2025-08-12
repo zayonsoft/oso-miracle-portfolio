@@ -1,5 +1,6 @@
-import { useEffect } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
+import { NavHeightContext } from "./contexts/NavHeightContext";
 
 export default function ScrollController() {
   const { pathname, hash } = useLocation();
@@ -10,13 +11,12 @@ export default function ScrollController() {
         const element = document.querySelector(hash);
         if (element) {
           element.scrollIntoView({ behavior: "smooth" });
-        } else {
-          window.scrollTo({ top: 0, behavior: "smooth" });
         }
-      }, 0);
+      }, 50);
     } else {
       window.scrollTo({ top: 0, behavior: "smooth" });
     }
   }, [pathname, hash]);
+
   return null;
 }

@@ -1,9 +1,14 @@
 import AboutList from "./AboutList";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { motion } from "framer-motion";
+import { useLocation } from "react-router-dom";
+import { HomeLinkContext } from "../../../../contexts/HomeLinkContext";
+import { useContext } from "react";
 
 export default function AboutLists() {
+  const { pathname, hash } = useLocation();
+  const { homeLinkClicked } = useContext(HomeLinkContext);
   let aboutList = [
     {
       text: "Created user-friendly interfaces that streamline the user experience.",
@@ -51,9 +56,15 @@ export default function AboutLists() {
       text: "Led brainstorming sessions to develop innovative design concepts.",
     },
   ];
+  const [ready, setReady] = useState(false);
+  useEffect(() => {
+    const timeout = setTimeout(() => setReady(true), 50);
+    return () => clearTimeout(timeout);
+  });
   const containerVariants = {
     hidden: {},
     visible: {
+      opacity: 1,
       transition: {
         staggerChildren: 0.4,
       },
@@ -61,7 +72,10 @@ export default function AboutLists() {
   };
 
   const childVariants = {
-    hidden: { opacity: 0, y: 30 },
+    hidden: {
+      opacity: !hash && !homeLinkClicked ? 0 : 1,
+      y: !hash && !homeLinkClicked ? 30 : 0,
+    },
     visible: { opacity: 1, y: 0 },
   };
 
@@ -70,7 +84,7 @@ export default function AboutLists() {
     <motion.div
       variants={containerVariants}
       initial="hidden"
-      whileInView="visible"
+      whileInView={ready ? "visible" : undefined}
       viewport={{ once: true }}
       className="font-inter grid gap-2.5"
     >

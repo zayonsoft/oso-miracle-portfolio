@@ -13,7 +13,21 @@ export default function Footer() {
   function scrollToTop(e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
+    setHomeLinkClicked(true);
     navigate("/");
+  }
+
+  function navigateToSection(e) {
+    e.preventDefault();
+    let url = props.navPath;
+
+    if (props.toTop) {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+      setHomeLinkClicked(true);
+      navigate(url);
+    } else {
+      navigate(url);
+    }
   }
 
   let neededIcons = [
@@ -31,7 +45,12 @@ export default function Footer() {
         </div>
         <ul className="flex  gap-3 flex-wrap justify-evenly content-center text-white font-medium font-montserrat w-11/12 max-w-[700px] m-auto ">
           {navLinks.map((link) => (
-            <List key={v4()} navPath={link.path} name={link.name} />
+            <List
+              key={v4()}
+              navPath={link.path}
+              name={link.name}
+              toTop={link.toTop}
+            />
           ))}
         </ul>
       </div>

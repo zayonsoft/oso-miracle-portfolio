@@ -6,16 +6,18 @@ import { useRef, useState, useEffect, useContext } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { NavHeightContext } from "../../../../contexts/NavHeightContext";
 
-const LogoImage = <img className="w-[130px]" src={Logo} alt="" />;
+const LogoImage = (
+  <img className="w-[130px] max-[805px]:w-[100px]" src={Logo} alt="" />
+);
 export { LogoImage };
 
 const navLinks = [
-  { name: "Home", path: "/" },
-  { name: "About Me", path: "/#about" },
-  { name: "Skills", path: "/#skills" },
-  { name: "Services", path: "/#services" },
-  { name: "My Work", path: "/#my_work" },
-  { name: "Contact Me", path: "/#contact" },
+  { name: "Home", path: "/", toTop: true },
+  { name: "About Me", path: "/#about", toTop: false },
+  { name: "Skills", path: "/#skills", toTop: false },
+  { name: "Services", path: "/#services", toTop: false },
+  { name: "My Work", path: "/#my_work", toTop: false },
+  { name: "Contact Me", path: "/#contact", toTop: false },
 ];
 export { navLinks };
 export default function Nav() {
@@ -55,11 +57,10 @@ export default function Nav() {
       <nav
         style={{
           position: scrolled ? "fixed" : "relative",
-          background: "#01071aed",
-          scrollMarginTop: `${navHeight}px`,
+          background: scrolled ? "#01071aed" : "",
         }}
         ref={navRef}
-        className="flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071aed] max-[700px]:z-20"
+        className="flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071aed] max-[700px]:z-[100000]"
       >
         <div className="logo col-span-6">{LogoImage}</div>
         {/* The DIV that contains the Menu Icon */}
@@ -81,12 +82,12 @@ export default function Nav() {
         <div
           ref={listCoverRef}
           style={{ height: mobileNavLinks }}
-          className={`grid content-center min-[701px]:!h-auto transition-all nav-links w-[60%]  max-[830px]:w-[70%] max-[700px]:col-span-7 max-[700px]:w-full max-[700px]:h-0 max-[700px]:overflow-hidden`}
+          className={`grid content-center min-[701px]:!h-auto transition-all nav-links w-[60%] max-[900px]:w-[65%] max-[830px]:w-[73%] max-[700px]:col-span-7 max-[700px]:w-full max-[700px]:h-0 max-[700px]:overflow-hidden`}
         >
           {/* The Navlinks list */}
           <ul
             ref={listRef}
-            className="flex justify-between content-center font-medium font-montserrat max-[830px]:gap-1.5 max-[700px]:grid max-[700px]:gap-2 max-[700px]:p-1 max-[700px]:justify-normal"
+            className="flex justify-between content-center font-medium font-montserrat max-[830px]:gap-1 max-[700px]:grid max-[700px]:gap-2 max-[700px]:p-1 max-[700px]:justify-normal"
           >
             {linkList.map((item) => (
               <List
@@ -94,6 +95,7 @@ export default function Nav() {
                 name={item.name}
                 isNav={true}
                 navPath={item.path}
+                toTop={item.toTop}
               />
             ))}
           </ul>
