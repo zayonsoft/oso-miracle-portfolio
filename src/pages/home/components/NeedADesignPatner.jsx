@@ -2,6 +2,11 @@ import { useNavigate } from "react-router-dom";
 
 export default function NeedADesignPatner(props) {
   const navigate = useNavigate();
+  function navigateToLink(e) {
+    e.preventDefault();
+    let url = e.target.getAttribute("href");
+    navigate(url);
+  }
   return (
     <section
       style={{ scrollMarginTop: props.scrollMargin }}
@@ -15,18 +20,15 @@ export default function NeedADesignPatner(props) {
       </div>
       <div className="flex m-auto gap-2 mt-7 items-center">
         <a
+          onClick={(e) => navigateToLink(e)}
           className="bg-[#175DC2] text-white text-[11px] font-montserrat font-semibold p-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#175DC299]"
-          href=""
+          href="/contact"
         >
           {" "}
           Hire Me{" "}
         </a>
         <a
-          onClick={(e) => {
-            e.preventDefault();
-            let url = e.currentTarget.getAttribute("href");
-            navigate(url);
-          }}
+          onClick={(e) => navigateToLink(e)}
           className="bg-white text-[#1F1F1F] text-[11px] font-montserrat font-bold px-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#FFFFFF99]"
           href="/see_my_works"
         >

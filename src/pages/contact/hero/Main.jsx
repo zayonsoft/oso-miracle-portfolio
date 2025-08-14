@@ -2,7 +2,7 @@ import "../styles/work.css";
 export default function Main() {
   return (
     <main className="absolute pt-24 top-0 left-0 right-0 left h-screen overflow-y-hidden">
-      <div className="absolute grid gap-10 w-[90%] max-w-[800px] -translate-x-1/2 top-[45%] left-1/2 text-center max-[800px]:top-[40%]">
+      <div className="absolute z-20 grid gap-10 w-[90%] max-w-[800px] -translate-x-1/2 top-[45%] left-1/2 text-center max-[800px]:top-[40%]">
         <h1 className="text-white font-montserrat text-4xl font-semibold max-[800px]:text-2xl">
           Let’s Start a Project Together
         </h1>
@@ -15,7 +15,10 @@ export default function Main() {
           <p>
             You can also reach me at
             <br />
-            <a className="text-[#448EF9]" href="">
+            <a
+              href=""
+              className="text-[#448EF9] hover:text-[#ffffff] cursor-pointer"
+            >
               hello@rivertdesign.com
             </a>
           </p>

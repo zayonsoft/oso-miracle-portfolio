@@ -1,3 +1,5 @@
+import { Check } from "lucide-react";
+
 export default function SolutionOption({
   id,
   value,
@@ -13,13 +15,15 @@ export default function SolutionOption({
         {!selected ? (
           <button
             type="button"
-            className="cursor-pointer block p-2 w-5 h-5 border border-[#0000004D] rounded-full"
+            className="cursor-pointer block p-2.5 w-5 h-5 border border-[#0000004D] rounded-full"
           ></button>
         ) : (
           <button
             type="button"
-            className="cursor-pointer bg-[#000000] block p-2 w-5 h-5 border border-[#000000] rounded-full"
-          ></button>
+            className="grid text-white justify-center font-bold box-border content-center text-center cursor-pointer bg-[#448EF9] p-2.5 w-5 h-5 border border-[#448EF9] rounded-full"
+          >
+            <Check size={14} strokeWidth={4} />
+          </button>
         )}
 
         <span className="h-auto">{value}</span>
