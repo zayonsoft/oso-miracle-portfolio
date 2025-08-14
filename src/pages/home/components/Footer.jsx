@@ -6,28 +6,20 @@ import { FaFacebookF } from "react-icons/fa";
 import { SiInstagram, SiWhatsapp, SiX } from "react-icons/si";
 import { ArrowUp } from "lucide-react";
 import "../styles/footer/footer.css";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+
+import { HomeLinkContext } from "../../../contexts/HomeLinkContext";
+import { useContext } from "react";
 
 export default function Footer() {
+  const { setHomeLinkClicked } = useContext(HomeLinkContext);
   const navigate = useNavigate();
+  const { pathname } = useLocation();
   function scrollToTop(e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
     setHomeLinkClicked(true);
-    navigate("/");
-  }
-
-  function navigateToSection(e) {
-    e.preventDefault();
-    let url = props.navPath;
-
-    if (props.toTop) {
-      window.scrollTo({ top: 0, behavior: "smooth" });
-      setHomeLinkClicked(true);
-      navigate(url);
-    } else {
-      navigate(url);
-    }
+    navigate(pathname);
   }
 
   let neededIcons = [

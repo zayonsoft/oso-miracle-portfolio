@@ -1,4 +1,7 @@
+import { useNavigate } from "react-router-dom";
+
 export default function NeedADesignPatner(props) {
+  const navigate = useNavigate();
   return (
     <section
       style={{ scrollMarginTop: props.scrollMargin }}
@@ -19,8 +22,13 @@ export default function NeedADesignPatner(props) {
           Hire Me{" "}
         </a>
         <a
+          onClick={(e) => {
+            e.preventDefault();
+            let url = e.currentTarget.getAttribute("href");
+            navigate(url);
+          }}
           className="bg-white text-[#1F1F1F] text-[11px] font-montserrat font-bold px-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#FFFFFF99]"
-          href=""
+          href="/see_my_works"
         >
           {" "}
           See My Work{" "}
