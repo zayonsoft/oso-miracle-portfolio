@@ -1,6 +1,5 @@
 import { useState } from "react";
-import ProjectDescriptionTextArea from "./ProjectDescriptionTextArea";
-import ProjectProgressTextArea from "./ProjectProgressTextArea";
+import TextArea from "./TextArea";
 
 export default function SpecificServices(props) {
   const [projectDescription, setProjectDescription] = useState({
@@ -27,19 +26,19 @@ export default function SpecificServices(props) {
   }
 
   return (
-    <section className="grid gap-10 font-inter w-[90%] box-border max-w-[800px] bg-red p-2 m-auto">
+    <section className="grid gap-10 font-inter p-2">
       <h1 className="text-center font-medium text-3xl">
         What specific services or products do you build? <br />
         Can I take a peek?
       </h1>
       <div className="grid gap-3 max-w-[500px] w-[90%] m-auto">
-        <ProjectDescriptionTextArea
+        <TextArea
           value={projectDescription.value}
           placeholder={projectDescription.placeholder}
           focused={projectDescription.focused}
           onchange={updateDescription}
         />
-        <ProjectProgressTextArea
+        <TextArea
           value={projectProgress.value}
           placeholder={projectProgress.placeholder}
           focused={projectProgress.focused}

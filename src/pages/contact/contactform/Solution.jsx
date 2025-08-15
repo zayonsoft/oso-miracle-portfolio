@@ -2,7 +2,7 @@ import SolutionOptions from "./SolutionOptions";
 
 export default function Solution(props) {
   return (
-    <div className="grid gap-10 w-[90%] box-border max-w-[550px] bg-red p-2 m-auto">
+    <div className="grid gap-10 box-border p-2">
       <h2 className="text-center font-inter font-medium text-3xl">
         Choose Solution
       </h2>

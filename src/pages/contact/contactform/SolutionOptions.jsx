@@ -1,5 +1,5 @@
 import { useState } from "react";
-import SolutionOption from "./SolutionOption";
+import { FormOPtion } from "./FormOption";
 import { v4 } from "uuid";
 export default function SolutionOptions(props) {
   const intialOptionList = [
@@ -35,7 +35,7 @@ export default function SolutionOptions(props) {
   return (
     <>
       {optionList.map((list) => (
-        <SolutionOption
+        <FormOPtion
           id={list.id}
           key={list.id}
           value={list.value}

@@ -2,7 +2,7 @@ import IntroInputs from "./IntroInputs";
 
 export default function Introduction(props) {
   return (
-    <div className="grid gap-5 w-[90%] box-border max-w-[550px] bg-red p-2 m-auto">
+    <div className="grid gap-5 box-border bg-red p-2">
       <h2 className="text-center font-inter font-medium text-3xl">
         Let’s get to know you first
       </h2>

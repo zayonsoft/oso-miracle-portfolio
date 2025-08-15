@@ -1,16 +1,15 @@
 import { Check } from "lucide-react";
 
-export default function SolutionOption({
-  id,
-  value,
-  selected,
-  updateFunction,
-}) {
+export function FormOPtion({ id, value, selected, updateFunction }) {
   return (
     <div>
       <p
         onClick={() => updateFunction(id)}
-        className="flex cursor-pointer items-center gap-3 rounded-4xl border outline-none font-normal font-inter border-[#0000004D] text-sm px-2.5 py-1.5 text-[#000000] placeholder:text-sm"
+        className={
+          selected
+            ? "flex cursor-pointer items-center gap-3 rounded-4xl border outline-none font-normal font-inter border-[#0000004D] text-sm px-2.5 py-1.5 text-[#000000] placeholder:text-sm"
+            : "flex cursor-pointer items-center gap-3 rounded-4xl border outline-none font-normal font-inter border-[#0000004D] text-sm px-2.5 py-1.5 text-[#00000099] placeholder:text-sm"
+        }
       >
         {!selected ? (
           <button
