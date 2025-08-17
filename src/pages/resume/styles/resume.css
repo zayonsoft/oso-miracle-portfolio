@@ -2,18 +2,22 @@
   .resume-effect {
     background: linear-gradient(
         180deg,
-        #642b91 0%,
-        rgba(22, 17, 80, 0.494792) 49.78%,
-        rgba(29, 9, 46, 0) 100%
+        #210f30 5%,
+        rgba(22, 17, 80, 0.494792) 60.78%,
+        rgba(29, 9, 46, 0) 65%
       ),
       url(../styles/dark_effects.svg);
-    background-position: center;
+    background-position: top;
     background-size: cover;
-    background-repeat: no-repeat;
   }
 }
 .flares-effect {
   background: url(./flares.svg);
+  background-size: cover;
+  background-position: top center;
+}
+.stars-effect {
+  background: url(./Stars.svg);
   background-size: cover;
   background-position: top center;
 }
