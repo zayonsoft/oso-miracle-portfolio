@@ -4,6 +4,7 @@ import Home from "./pages/home/Home";
 import ProjectsPage from "./pages/projects/ProjectsPage";
 import SeeWorksSection from "./pages/works/SeeWorksSection";
 import ContactSection from "./pages/contact/ContactSection";
+import ResumeSection from "./pages/resume/ResumeSection";
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <Route path="/my_project/:id" element={<ProjectsPage />}></Route>
       <Route path="see_my_works" element={<SeeWorksSection />}></Route>
       <Route path="contact" element={<ContactSection />}></Route>
+      <Route path="resume" element={<ResumeSection />}></Route>
     </Routes>
   );
 }

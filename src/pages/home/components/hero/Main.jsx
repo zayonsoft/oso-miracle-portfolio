@@ -4,7 +4,14 @@ import HeroUiImageFrame from "../../styles/hero/hero_image_frame.svg";
 import HeroImageShadow from "./HeroImageShadow";
 import TinyFilledBox from "./TinyFilledBox";
 import TinyOpaqueBox from "./TinyBorderedBox";
+import { useNavigate } from "react-router-dom";
 export default function Main() {
+  const navigate = useNavigate();
+  function navigateToLink(e) {
+    e.preventDefault();
+    let url = e.target.getAttribute("href");
+    navigate(url);
+  }
   return (
     <>
       <div className="absolute -translate-y-1/2 top-1/2 left-0 right-0 z-10">
@@ -38,15 +45,17 @@ export default function Main() {
 
               <div className="flex gap-2 mt-7">
                 <a
+                  onClick={(e) => navigateToLink(e)}
                   className="bg-[#175DC2] text-white text-[11px] font-montserrat font-semibold p-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#175DC299]"
-                  href=""
+                  href="/contact"
                 >
                   {" "}
                   Hire Me{" "}
                 </a>
                 <a
+                  onClick={(e) => navigateToLink(e)}
                   className="bg-white text-[#1F1F1F] text-[11px] font-montserrat font-bold px-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#FFFFFF99]"
-                  href=""
+                  href="/resume"
                 >
                   {" "}
                   My Resume{" "}

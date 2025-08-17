@@ -1,0 +1,36 @@
+@media (prefers-color-scheme: dark) {
+  .resume-effect {
+    background: linear-gradient(
+        180deg,
+        #642b91 0%,
+        rgba(22, 17, 80, 0.494792) 49.78%,
+        rgba(29, 9, 46, 0) 100%
+      ),
+      url(../styles/dark_effects.svg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
+.flares-effect {
+  background: url(./flares.svg);
+  background-size: cover;
+  background-position: top center;
+}
+.back-btn {
+  background: linear-gradient(180deg, #6462c5 0%, #5e59b7 100%);
+}
+.back-btn:hover {
+  background: transparent;
+}
+
+.logo-shadow {
+  border: 1px solid;
+
+  box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.5);
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
