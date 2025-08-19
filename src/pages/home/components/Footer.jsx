@@ -6,7 +6,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { SiInstagram, SiWhatsapp, SiX } from "react-icons/si";
 import { ArrowUp } from "lucide-react";
 import "../styles/footer/footer.css";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { HomeLinkContext } from "../../../contexts/HomeLinkContext";
 import { useContext } from "react";
@@ -33,7 +33,12 @@ export default function Footer() {
     <footer className="grid bg-transparent w-full">
       <div className="p-4">
         <div className="grid p-6">
-          <div className="justify-self-center p-10">{LogoImage}</div>
+          <div className="justify-self-center p-10">
+            <Link style={{ outline: "none" }} to={"/"}>
+              {" "}
+              {LogoImage}
+            </Link>{" "}
+          </div>
         </div>
         <ul className="flex  gap-3 flex-wrap justify-evenly content-center text-white font-medium font-montserrat w-11/12 max-w-[700px] m-auto ">
           {navLinks.map((link) => (
@@ -65,10 +70,10 @@ export default function Footer() {
           DESIGN All Rights Reserved , Inc.
         </div>
         <div className="absolute justify-self-end self-center right-4">
-          <div className="gradient-border rounded-full">
+          <div className="gradient-border animate-pulse rounded-full">
             <button
               onClick={(e) => scrollToTop(e)}
-              className="text-white rounded-full w-8 h-8 text-center grid justify-center content-center bg-[#121212] cursor-pointer hover:bg-transparent"
+              className="text-white outline-none rounded-full w-8 h-8 text-center grid justify-center content-center bg-[#121212] cursor-pointer hover:bg-transparent"
               type="button"
             >
               {" "}

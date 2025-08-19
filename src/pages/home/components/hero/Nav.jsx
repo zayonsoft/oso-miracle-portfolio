@@ -5,9 +5,14 @@ import { useRef, useState, useEffect, useContext } from "react";
 
 import { v4 as uuidv4 } from "uuid";
 import { NavHeightContext } from "../../../../contexts/NavHeightContext";
+import { Link, useNavigate } from "react-router-dom";
 
 const LogoImage = (
-  <img className="w-[130px] max-[805px]:w-[100px]" src={Logo} alt="" />
+  <img
+    className="cursor-pointer w-[130px] max-[805px]:w-[100px]"
+    src={Logo}
+    alt=""
+  />
 );
 export { LogoImage };
 
@@ -26,7 +31,7 @@ export default function Nav() {
   const [linkList] = useState(navLinks);
   const [navOpen, setNavOpen] = useState(false);
   const [mobileNavLinks, setMobileNavLinks] = useState("0px");
-  const { navHeight, setNavHeight } = useContext(NavHeightContext);
+  const { setNavHeight } = useContext(NavHeightContext);
 
   const listRef = useRef(null);
   const listCoverRef = useRef(null);
@@ -62,7 +67,13 @@ export default function Nav() {
         ref={navRef}
         className="flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071aed] max-[700px]:z-[100000]"
       >
-        <div className="logo col-span-6">{LogoImage}</div>
+        <div className="logo col-span-6">
+          {" "}
+          <Link style={{ outline: "none" }} to={"/"}>
+            {" "}
+            {LogoImage}
+          </Link>{" "}
+        </div>
         {/* The DIV that contains the Menu Icon */}
         <div className="content-center hidden max-[700px]:block justify-self-end">
           <button
