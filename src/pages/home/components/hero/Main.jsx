@@ -5,6 +5,7 @@ import HeroImageShadow from "./HeroImageShadow";
 import TinyFilledBox from "./TinyFilledBox";
 import TinyOpaqueBox from "./TinyBorderedBox";
 import { useNavigate } from "react-router-dom";
+import { ReactTyped } from "react-typed";
 export default function Main() {
   const navigate = useNavigate();
   function navigateToLink(e) {
@@ -34,8 +35,15 @@ export default function Main() {
                 UI/UX Designer
               </p>
               <p className="text-[38px] text-white font-montserrat font-bold">
-                Hi There, I’m
-                <br /> <span className="text-[#175DC2]">Miracle John</span>
+                <ReactTyped
+                  strings={[
+                    "Hi There, I'm<br/> <span class='text-[#175DC2]'>Miracle John</span>",
+                  ]}
+                  typeSpeed={300}
+                  backSpeed={80}
+                  backDelay={1200}
+                  loop
+                />
               </p>
               <p className="text-white font-montserrat font-light text-[13px]">
                 Welcome to my portfolio of captivating User Interface and
