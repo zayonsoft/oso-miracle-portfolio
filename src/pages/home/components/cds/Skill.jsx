@@ -1,6 +1,18 @@
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export default function Skill(props) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   return (
-    <div className="col-span-1">
+    <motion.div
+      ref={ref}
+      initial={{ opacity: 0.2, x: -100 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 1.0, delay: 0.5 }}
+      className="col-span-1"
+    >
       <div className="grid gap-2">
         <p className="text-sm font-montserrat font-bold">{props.name}</p>
         <div className="grid grid-cols-10 content-center">
@@ -18,6 +30,6 @@ export default function Skill(props) {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
