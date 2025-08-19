@@ -2,15 +2,25 @@ import { useNavigate, Link } from "react-router-dom";
 import "../../styles/works/works.css";
 import { ArrowRight } from "lucide-react";
 import { v4 } from "uuid";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Work(props) {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
   const navigate = useNavigate();
 
   function navigateToProject(id) {
     navigate(`/my_project/${id}`);
   }
   return (
-    <section className="grid gap-2 border-[1px] border-[#00000099] rounded-4xl m-auto grid-cols-2 p-4 font-montserrat content-center max-w-[850px] max-[571px]:grid-cols-1">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0.2, x: -100 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 1.0, delay: 0.5 }}
+      className="grid gap-2 border-[1px] border-[#00000099] rounded-4xl m-auto grid-cols-2 p-4 font-montserrat content-center max-w-[850px] max-[571px]:grid-cols-1"
+    >
       <div className="grid gap-8 max-[571px]:order-2">
         <div className="grid gap-5 self-start">
           <h1 className="font-semibold text-2xl max-[800px]:text-xl">
@@ -49,6 +59,6 @@ export default function Work(props) {
           alt=""
         />
       </div>
-    </section>
+    </motion.section>
   );
 }

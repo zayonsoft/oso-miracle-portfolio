@@ -38,7 +38,7 @@ export default function Services() {
   const [services, setServices] = useState(serviceList);
 
   return (
-    <section className="grid grid-cols-4 bg-white px-[75px] py-10 justify-between gap-2.5 max-[830px]:px-[50px] max-[861px]:grid-cols-3 max-[751px]:grid-cols-2 max-[601px]:grid-cols-1 max-[601px]:gap-8 max-[700px]:px-[30px]">
+    <section className="grid grid-cols-4 max-w-full bg-white px-[75px] py-10 justify-between gap-2.5 max-[830px]:px-[50px] max-[861px]:grid-cols-3 max-[751px]:grid-cols-2 max-[601px]:grid-cols-1 max-[601px]:gap-8 max-[700px]:px-[30px]">
       {services.map((service) => (
         <Service
           key={uuidv4()}
