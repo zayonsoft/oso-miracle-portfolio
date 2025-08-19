@@ -1,9 +1,13 @@
 import ResumeWrapper from "./ResumeWrapper";
 
+import ThemeProvider from "../../contexts/ThemeProvider";
+
 export default function ResumeSection(props) {
   return (
-    <section>
-      <ResumeWrapper />
-    </section>
+    <ThemeProvider>
+      <section>
+        <ResumeWrapper />
+      </section>
+    </ThemeProvider>
   );
 }

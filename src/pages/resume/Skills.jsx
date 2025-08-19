@@ -6,15 +6,17 @@ export default function Skills(props) {
     <div className="grid gap-8 font-inter">
       <h2 className="flex items-center gap-4 pt-2 pb-4 border-b border-[#585D6C]">
         {/* ADD CONDITIONAL RENDERING */}
-        <span className="text-[#C19CFE] text-2xl">
+        <span className="text-[#6A1CFD] dark:text-[#C19CFE] text-2xl max-[650px]:text-xl">
           <FontAwesomeIcon icon={faUserFriends} />
         </span>
-        <span className="text-white font-semibold text-4xl">Skills</span>
+        <span className="text-[#050607] dark:text-white font-semibold text-4xl max-[650px]:text-[23px]">
+          Skills
+        </span>
       </h2>
 
       <section className="grid gap-5">
         <div className="grid gap-5">
-          <h3 className="text-white text-[28px] font-semibold">
+          <h3 className="text-[#050607] dark:text-white text-[28px] max-[650px]:text-[22px] font-semibold">
             Ethical Hacking & Cybersecurity
           </h3>
           <ul className="grid gap-4">
@@ -34,7 +36,7 @@ export default function Skills(props) {
 
       <section className="grid gap-5">
         <div className="grid gap-5">
-          <h3 className="text-white text-[28px] font-semibold">
+          <h3 className="text-[#050607] dark:text-white text-[28px] max-[650px]:text-[22px] font-semibold">
             Soft Skills and General Competencies
           </h3>
           <ul className="grid gap-4">
@@ -46,7 +48,7 @@ export default function Skills(props) {
       </section>
       <section className="grid gap-5">
         <div className="grid gap-5">
-          <h3 className="text-white text-[28px] font-semibold">
+          <h3 className="text-[#050607] dark:text-white text-[28px] max-[650px]:text-[22px] font-semibold">
             Certifications
           </h3>
           <ul className="grid gap-4">

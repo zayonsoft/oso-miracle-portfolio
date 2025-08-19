@@ -1,84 +1,106 @@
 import "../home/styles/footer/footer.css";
 import "./styles/resume.css";
 import DarkThemeBulb from "./styles/dark_theme_bulb.svg";
+import LightThemeBulb from "./styles/light_theme_bulb.svg";
 
 import { ArrowLeft } from "lucide-react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faPhone, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { useState } from "react";
+import { useContext, useEffect } from "react";
+import { ThemeContext } from "../../contexts/ThemeContext";
 import WorkExperience from "./WorkExperience";
 import Education from "./Education";
 import Skills from "./Skills";
+import { useNavigate } from "react-router-dom";
 
 export default function ResumeWrapper(props) {
-  const [theme, setTheme] = useState("dark");
+  const { theme, toggleTheme } = useContext(ThemeContext);
+
+  const navigate = useNavigate();
 
   return (
-    <section className="relative py-3.5 px-[120px] min-h-screen dark:bg-[#000000] max-[850px]:px-[70px] max-[550px]:px-[40px]">
+    <section className="relative grid gap-2 py-3.5 pb-12 px-[120px] min-h-screen bg-white dark:bg-[black]  max-[850px]:px-[70px] max-[550px]:px-[25px]">
       {/* THE DIV THAT WRAPS THE STAR UNDERLAY AND LINEAR GRADIENT */}
-
       <div className="resume-effect absolute top-0 bottom-0 left-0 right-0"></div>
       <div className="flares-effect absolute top-0 h-[100vh] left-0 right-0"></div>
       <div className="stars-effect absolute top-0 bottom-1/2 left-0 right-0"></div>
-      {/* The DIV THAT WRAPS THE MAIN THING */}
-      <div className="grid gap-10 relative">
-        <div className="relative flex justify-between items-center">
-          {/* Back Arrow DIV */}
+      {/* DESIGN SIDE ENDS  */}
 
-          <div className="gradient-border rounded-full">
+      {/* THE BACK ARROW */}
+      <div className="relative flex justify-between items-center">
+        {/* Back Arrow DIV */}
+        <div className="gradient-border rounded-full">
+          <button
+            onClick={() => navigate("/")}
+            className="bg-[#a497ff] dark:bg-[#5c5bb4] hover:bg-transparent max-[650px]:bg-[#849efd] max-[950px]:dark:bg-[#5f78ca] text-white rounded-full w-9 h-9 text-center grid justify-center content-center cursor-pointer outline-none"
+            type="button"
+          >
+            {" "}
+            <ArrowLeft size={20} />{" "}
+          </button>
+        </div>
+        {/* BACK ARROW ENDS */}
+
+        {/* THE BULB ICON DIV */}
+        <div>
+          <div className="relative top-[-10px]">
             <button
-              onClick={(e) => scrollToTop(e)}
-              className="back-btn text-white rounded-full w-9 h-9 text-center grid justify-center content-center cursor-pointer outline-none"
-              type="button"
+              onClick={() => {
+                toggleTheme();
+              }}
+              className="outline-none cursor-pointer w-[35px]"
             >
-              {" "}
-              <ArrowLeft size={20} />{" "}
+              {theme == "dark" ? (
+                <img src={DarkThemeBulb} alt="" />
+              ) : (
+                <img src={LightThemeBulb} alt="" />
+              )}
             </button>
           </div>
-
-          {/* THE BULB ICON DIV */}
-          <div>
-            <div className="relative top-[-10px]">
-              <button className="cursor-pointer w-[35px]">
-                <img src={DarkThemeBulb} alt="" />
-              </button>
-            </div>
-          </div>
         </div>
-        <div className="grid gap-3 font-inter">
-          <h1 className="text-[30px] font-semibold text-white">
+        {/* BULB ICON ENDS */}
+      </div>
+
+      {/* THIS PART CONTAINS THE MAIN PAGE CONTENT */}
+      <div className="grid gap-14 relative">
+        <div className="grid gap-2 font-inter">
+          <h1 className="text-[30px] font-semibold text-[#050607] dark:text-white max-[650px]:text-[23px]">
             MIRACLE JOHN OSO
           </h1>
-          <h3 className="text-[25px] font-[350] text-[#FFFFFFCC]">
+          <h3 className="text-[25px] font-[350] text-[#3F424DCC] dark:text-[#FFFFFFCC] max-[650px]:text-[15px]">
             UI/UX Specialist, Product Designer
           </h3>
-          <p className="flex gap-4 items-center">
-            <span className="text-[#FDAEA7] text-2xl">
-              <FontAwesomeIcon icon={faLocationDot} />
-            </span>
-            <span className="text-[#FFFFFFCC] font-bold text-lg">
-              No 10, Araromi Qtrs, Akungba Akoko, Ondo State, Nigeria.{" "}
-            </span>
-          </p>
-          <p className="flex gap-4 items-center">
-            <span className="flex items-center justify-center bg-[#8D4DFD] p-1 rounded-full w-8 h-8 text-[#FFFFFF] text-[15px]">
-              <FontAwesomeIcon icon={faEnvelope} />
-            </span>
-            <span className="text-[#FFFFFFCC] font-normal">
-              www.charlieputh062@gmail.com
-            </span>
-          </p>
-          <p className="flex gap-4 items-center">
-            <span className="text-[#EA4C89] text-2xl">
-              <FontAwesomeIcon icon={faPhone} />
-            </span>
-            <span className="text-[#FFFFFFCC] font-normal">08108261439</span>
-          </p>
+          <div className="grid gap-1.5">
+            <p className="flex gap-3 items-center">
+              <span className="text-[#D41503] dark:text-[#FDAEA7] text-xl w-8 h-8 max-[650px]:w-7 max-[650px]:h-7">
+                <FontAwesomeIcon icon={faLocationDot} />
+              </span>
+              <span className="text-[#3F424DCC] dark:text-[#FFFFFFCC] font-bold text-lg max-[650px]:text-sm">
+                No 10, Araromi Qtrs, Akungba Akoko, Ondo State, Nigeria.{" "}
+              </span>
+            </p>
+            <p className="flex gap-3 items-center">
+              <span className="flex items-center justify-center bg-[#8D4DFD] p-1 rounded-full w-8 h-8 max-[650px]:w-7 max-[650px]:h-7 text-[#FFFFFF] text-[15px] max-[650px]:text-[12px]">
+                <FontAwesomeIcon icon={faEnvelope} />
+              </span>
+              <span className="text-[#050607] dark:text-[#FFFFFFCC] font-normal text-sm">
+                www.charlieputh062@gmail.com
+              </span>
+            </p>
+            <p className="flex gap-3 items-center">
+              <span className="w-8 h-8 max-[650px]:w-7 max-[650px]:h-7 text-[#EA4C89] text-xl">
+                <FontAwesomeIcon icon={faPhone} />
+              </span>
+              <span className="text-[#050607] dark:text-[#FFFFFFCC] font-normal text-sm">
+                08108261439
+              </span>
+            </p>
+          </div>
         </div>
 
         <div>
-          <p className="font-inter text-[#FFFFFF] text-lg font-normal">
+          <p className="font-inter text-[#050607] dark:text-[#FFFFFF] text-[16px] font-normal max-[650px]:text-sm">
             Certified Ethical Hacker (CEH) and CCNA-certified professional with
             strong foundational skills in ethical hacking, penetration testing,
             and ICT security. Proficient in utilizing tools such as Wireshark,

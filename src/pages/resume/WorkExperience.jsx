@@ -1,10 +1,17 @@
 import DarkWorkExpIcon from "./styles/work_experience_dark.svg";
+import LightWorkExpIcon from "./styles/work_experience_light.svg";
 import HiitLogo from "./styles/hiit_logo.svg";
 import WorkExpList from "./WorkExpList";
 
 import { v4 } from "uuid";
 
+import { useContext } from "react";
+
+import { ThemeContext } from "../../contexts/ThemeContext";
+
 export default function WorkExperience(props) {
+  const { theme } = useContext(ThemeContext);
+
   const workExpData = [
     {
       id: v4(),
@@ -87,28 +94,34 @@ export default function WorkExperience(props) {
         {/* ADD CONDITIONAL RENDERING */}
         <span>
           {" "}
-          <img className="w-8" src={DarkWorkExpIcon} alt="" />{" "}
+          <img
+            className="w-8 max-[650px]:w-7"
+            src={theme == "light" ? LightWorkExpIcon : DarkWorkExpIcon}
+            alt=""
+          />{" "}
         </span>
-        <span className="text-white font-semibold text-4xl">
+        <span className="text-[#050607] dark:text-white font-semibold text-4xl max-[650px]:text-[23px]">
           Work Experience
         </span>
       </h2>
 
       <div className="flex justify-between">
         <div className="flex gap-3 font-inter">
-          <span className="logo-shadow w-12 h-12 block p-3 rounded-[19px]">
+          <span className="logo-shadow w-11 h-11 block p-3 rounded-[19px]">
             <img className="w-6" src={HiitLogo} alt="" />
           </span>
           <div>
-            <h3 className="text-white text-[25px] font-semibold">
+            <h3 className="text-[#050607] dark:text-white text-[25px] max-[650px]:text-[18px] font-semibold">
               HiiT Plc, Self-Employed
             </h3>
-            <p className="text-[#C19CFE] text-[16px] font-normal">
+            <p className="text-[#6A1CFD] dark:text-[#C19CFE] text-[16px] font-normal max-[650px]:text-[13px]">
               UI/UX Designer
             </p>
           </div>
         </div>
-        <p className="font-inter text-[#FFFFFFCC]">10/2023 - Present</p>
+        <p className="font-inter text-[#656A7B] text-sm dark:text-[#FFFFFFCC]">
+          10/2023 - Present
+        </p>
       </div>
       {/* COMPANY HEADER ENDS HERE */}
 
