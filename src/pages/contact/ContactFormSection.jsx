@@ -7,10 +7,15 @@ import SpecificServices from "./contactform/SpecificServices";
 import SubmitButton from "./contactform/SubmitButton";
 import Timeline from "./contactform/Timeline";
 import { ContactFormContext } from "../../contexts/ContactFormContext";
+import MessageModal from "./contactform/MessageModal";
 
 export default function ContactFormSection(props) {
   const { contactData, setContactData } = useContext(ContactFormContext);
   const [formOkay, setFormOkay] = useState(false);
+
+  const [modalOpen, setModalOpen] = useState(false);
+  const openModal = () => setModalOpen(true);
+  const handleClose = () => setModalOpen(false);
   useEffect(() => {
     if (
       contactData.name &&
@@ -32,6 +37,7 @@ export default function ContactFormSection(props) {
 
   function submitAction(e) {
     e.preventDefault();
+    openModal();
   }
 
   return (
@@ -50,6 +56,11 @@ export default function ContactFormSection(props) {
           <Timeline />
           <SubmitButton formOkay={formOkay} />
         </form>
+        <MessageModal
+          open={modalOpen}
+          closeFunction={handleClose}
+          message={"This section is still under development."}
+        />
       </div>
     </section>
   );
