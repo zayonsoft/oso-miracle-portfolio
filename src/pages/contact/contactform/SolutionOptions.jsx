@@ -1,34 +1,47 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { FormOPtion } from "./FormOption";
 import { v4 } from "uuid";
+import { ContactFormContext } from "../../../contexts/ContactFormContext";
+import { useContext } from "react";
+
 export default function SolutionOptions(props) {
   const intialOptionList = [
     {
-      id: [v4()],
+      id: v4(),
       value: "Remote Design Partner",
-      selected: false,
+      selected: true,
     },
     {
-      id: [v4()],
+      id: v4(),
       value: "Redesign Web/App",
       selected: false,
     },
     {
-      id: [v4()],
+      id: v4(),
       value: "Create New Features",
       selected: false,
     },
-    { id: [v4()], value: "UI Kit & Template Production", selected: false },
+    { id: v4(), value: "UI Kit & Template Production", selected: false },
   ];
   const [optionList, setOptionList] = useState(intialOptionList);
 
+  const [solution, setSolution] = useState("Remote Design Partner");
+
+  const { contactData, setContactData } = useContext(ContactFormContext);
+ 
+
+  useEffect(() => {
+    setContactData({ ...contactData, solution });
+  }, [solution]);
+
   function updateMultiSelect(id) {
     setOptionList((previousList) =>
-      previousList.map((item) =>
-        item.id == id
+      previousList.map((item) => {
+        item.id == id ? setSolution(item.value) : "";
+        return item.id == id
           ? { ...item, selected: true }
-          : { ...item, selected: false }
-      )
+          : { ...item, selected: false };
+      })
     );
   }
 

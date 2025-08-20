@@ -1,14 +1,8 @@
 import AboutList from "./AboutList";
 import { useEffect, useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
-import { HomeLinkContext } from "../../../../contexts/HomeLinkContext";
-import { useContext } from "react";
 
 export default function AboutLists() {
-  const { pathname, hash } = useLocation();
-  const { homeLinkClicked } = useContext(HomeLinkContext);
   let aboutList = [
     {
       text: "Created user-friendly interfaces that streamline the user experience.",
@@ -61,36 +55,13 @@ export default function AboutLists() {
     const timeout = setTimeout(() => setReady(true), 50);
     return () => clearTimeout(timeout);
   });
-  const containerVariants = {
-    hidden: {},
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.4,
-      },
-    },
-  };
-
-  const childVariants = {
-    hidden: {
-      opacity: !hash && !homeLinkClicked ? 0 : 1,
-      y: !hash && !homeLinkClicked ? 30 : 0,
-    },
-    visible: { opacity: 1, y: 0 },
-  };
 
   const [aboutMe, setAboutMe] = useState(aboutList);
   return (
-    <motion.div
-      variants={containerVariants}
-      initial="hidden"
-      whileInView={ready ? "visible" : undefined}
-      viewport={{ once: true }}
-      className="font-inter grid gap-2.5"
-    >
+    <div className="font-inter grid gap-2.5">
       {aboutMe.map((list) => (
-        <AboutList key={uuidv4()} text={list.text} variant={childVariants} />
+        <AboutList key={uuidv4()} text={list.text} />
       ))}
-    </motion.div>
+    </div>
   );
 }

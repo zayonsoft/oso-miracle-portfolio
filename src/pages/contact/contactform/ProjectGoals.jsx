@@ -1,11 +1,21 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextArea from "./TextArea";
+import { ContactFormContext } from "../../../contexts/ContactFormContext";
+import { useContext } from "react";
+
 export default function ProjectGoals() {
+  const { contactData, setContactData } = useContext(ContactFormContext);
+
   const [projectGoals, setProjectGoals] = useState({
     value: "",
     focused: false,
     placeholder: "Enter your goals & issues of the project...",
   });
+
+  useEffect(() => {
+    setContactData({ ...contactData, projectGoals: projectGoals.value });
+  }, [projectGoals]);
+
   function updateGoals(newValue) {
     setProjectGoals({
       ...projectGoals,

@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextArea from "./TextArea";
+import { ContactFormContext } from "../../../contexts/ContactFormContext";
+import { useContext } from "react";
+
 export default function PrimaryCompetitors(props) {
-  const [PrimaryCompetitors, setPrimaryCompetitors] = useState({
+  const { contactData, setContactData } = useContext(ContactFormContext);
+  const [primaryCompetitors, setPrimaryCompetitors] = useState({
     value: "",
     focused: false,
     placeholder: "Enter your competitors...",
@@ -9,11 +13,15 @@ export default function PrimaryCompetitors(props) {
 
   function updateCompetitors(newValue) {
     setPrimaryCompetitors({
-      ...PrimaryCompetitors,
+      ...primaryCompetitors,
       value: newValue,
       focused: true,
     });
   }
+
+  useEffect(() => {
+    setContactData({ ...contactData, competitors: primaryCompetitors.value });
+  }, [primaryCompetitors]);
 
   return (
     <section className="grid gap-10 font-inter w-[90%] box-border max-w-[800px] bg-red p-2 m-auto">
@@ -23,9 +31,9 @@ export default function PrimaryCompetitors(props) {
       <div className="grid gap-3 max-w-[500px] w-[90%] m-auto">
         <p>
           <TextArea
-            value={PrimaryCompetitors.value}
-            placeholder={PrimaryCompetitors.placeholder}
-            focused={PrimaryCompetitors.focused}
+            value={primaryCompetitors.value}
+            placeholder={primaryCompetitors.placeholder}
+            focused={primaryCompetitors.focused}
             onchange={updateCompetitors}
           />
         </p>

@@ -39,9 +39,9 @@ export default function Main() {
                   strings={[
                     "Hi There, I'm<br/> <span class='text-[#175DC2]'>Miracle John</span>",
                   ]}
-                  typeSpeed={300}
-                  backSpeed={80}
-                  backDelay={1200}
+                  typeSpeed={200}
+                  backSpeed={50}
+                  backDelay={2000}
                   loop
                 />
               </p>

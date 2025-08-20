@@ -1,8 +1,13 @@
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
 import { v4 } from "uuid";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function ChallengeSolution() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
+
   const { currentProject } = useContext(ProjectContext);
   return (
     <section className="px-[75px] py-10 grid gap-10 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
@@ -31,7 +36,15 @@ export default function ChallengeSolution() {
 
       {/* Typography Section */}
       <div>
-        <img className="m-auto " src={currentProject.typographyImage} alt="" />
+        <motion.img
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
+          className="m-auto "
+          src={currentProject.typographyImage}
+          alt=""
+        />
       </div>
     </section>
   );

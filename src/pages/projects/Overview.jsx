@@ -2,8 +2,12 @@ import FigmaIcon from "./styles/figma_icon.svg";
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
 import { v4 } from "uuid";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Overview() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false });
   const { currentProject, setCurrentProject } = useContext(ProjectContext);
 
   return (
@@ -49,7 +53,11 @@ export default function Overview() {
       </div>
       {/* SECTION FOR THE IMAGE BELOW OVERVIEW */}
       <div className="max-w-full ">
-        <img
+        <motion.img
+          ref={ref}
+          initial={{ opacity: 0, y: 100 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.5 }}
           className="block m-auto max-w-full max-h-full rounded-[25px]"
           src={currentProject.overviewImage}
           alt=""

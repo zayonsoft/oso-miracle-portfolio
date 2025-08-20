@@ -1,9 +1,20 @@
 import ProfileImagePic from "../../styles/about/profile_image.svg";
 import ProfileBottom from "./ProfileBottom";
 import ProfilePicBlueDesign from "../../styles/about/about_under_image_line.svg";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
+
 export default function ProfileImage() {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: false, amount: 0.4 });
   return (
-    <section className="relative col-span-2 max-[661px]:pb-[110px]">
+    <motion.section
+      ref={ref}
+      initial={{ opacity: 0, x: -100 }}
+      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      transition={{ duration: 0.6, delay: 0.3 }}
+      className="relative col-span-2 max-[661px]:pb-[110px]"
+    >
       {/* Div That Overlays everything and prevents the images from being dragable individually */}
       <div className="absolute left-0 right-0 top-0 bottom-0 z-20"></div>
       {/* background box */}
@@ -26,6 +37,6 @@ export default function ProfileImage() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }

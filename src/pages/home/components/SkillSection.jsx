@@ -5,7 +5,7 @@ import { useRef } from "react";
 
 export default function SkillSection(props) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false });
+  const isInView = useInView(ref, { once: false, amount: 0.4 });
   return (
     <section
       style={{ scrollMarginTop: props.scrollMargin }}

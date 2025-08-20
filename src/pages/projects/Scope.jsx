@@ -2,8 +2,14 @@ import ScopeIcon from "./styles/scope_icon.svg";
 import { useContext } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
 import { v4 } from "uuid";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 
 export default function Scope() {
+  const ref1 = useRef(null);
+  const ref2 = useRef(null);
+  const isInView1 = useInView(ref1, { once: false });
+  const isInView2 = useInView(ref2, { once: false });
   const { currentProject } = useContext(ProjectContext);
   return (
     <section className="px-[75px] py-10 grid gap-10 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
@@ -29,14 +35,22 @@ export default function Scope() {
       {/* Div Containing Scope Images 1 and 2 */}
       <div className="grid gap-10">
         <div>
-          <img
+          <motion.img
+            ref={ref1}
+            initial={{ opacity: 0, y: 100 }}
+            animate={isInView1 ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.3 }}
             className="m-auto max-w-full"
             src={currentProject.scopeImage1}
             alt=""
           />
         </div>
         <div>
-          <img
+          <motion.img
+            ref={ref2}
+            initial={{ opacity: 0, y: 100 }}
+            animate={isInView2 ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.5 }}
             className="m-auto max-w-full"
             src={currentProject.scopeImage2}
             alt=""

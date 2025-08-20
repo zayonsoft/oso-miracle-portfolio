@@ -16,9 +16,9 @@ export default function Work(props) {
   return (
     <motion.section
       ref={ref}
-      initial={{ opacity: 0.2, x: -100 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
-      transition={{ duration: 1.0, delay: 0.5 }}
+      initial={{ opacity: 0, y: 100 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: 0.5 }}
       className="grid gap-2 border-[1px] border-[#00000099] rounded-4xl m-auto grid-cols-2 p-4 font-montserrat content-center max-w-[850px] max-[571px]:grid-cols-1"
     >
       <div className="grid gap-8 max-[571px]:order-2">

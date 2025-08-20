@@ -1,7 +1,12 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import TextArea from "./TextArea";
 
+import { ContactFormContext } from "../../../contexts/ContactFormContext";
+import { useContext } from "react";
+
 export default function SpecificServices(props) {
+  const { contactData, setContactData } = useContext(ContactFormContext);
+
   const [projectDescription, setProjectDescription] = useState({
     value: "",
     focused: false,
@@ -12,6 +17,14 @@ export default function SpecificServices(props) {
     focused: false,
     placeholder: "Enter Your Current Progress of Your Project",
   });
+
+  useEffect(() => {
+    setContactData({
+      ...contactData,
+      projectDescription: projectDescription.value,
+      projectProgress: projectProgress.value,
+    });
+  }, [projectDescription, projectProgress]);
 
   function updateProgress(newValue) {
     setProjectProgress({ ...projectProgress, value: newValue, focused: true });
