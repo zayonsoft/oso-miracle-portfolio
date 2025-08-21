@@ -31,7 +31,7 @@ export default function Work(props) {
             {props.terms.map((term) => (
               <span
                 key={v4()}
-                className="inline-block border-[#0000004D] border-[1px] px-1 py-1.5 rounded-4xl"
+                className="inline-block border-[#0000004D] border-[1px] px-2 py-2 rounded-4xl"
               >
                 {term}
               </span>

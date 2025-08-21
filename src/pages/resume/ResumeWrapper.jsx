@@ -49,12 +49,12 @@ export default function ResumeWrapper(props) {
               onClick={() => {
                 toggleTheme();
               }}
-              className="outline-none cursor-pointer w-[35px]"
+              className="outline-none cursor-pointer w-[40px] p-1 box-border block shadow rounded-2xl font-montserrat text-xs text-wrap"
             >
               {theme == "dark" ? (
-                <img src={DarkThemeBulb} alt="" />
+                <img src={DarkThemeBulb} alt="Toggle Theme" />
               ) : (
-                <img src={LightThemeBulb} alt="" />
+                <img src={LightThemeBulb} alt="Toggle Theme" />
               )}
             </button>
           </div>

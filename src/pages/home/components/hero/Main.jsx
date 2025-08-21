@@ -15,22 +15,22 @@ export default function Main() {
   }
   return (
     <>
-      <div className="absolute -translate-y-1/2 top-1/2 left-0 right-0 z-10">
+      <div className="absolute max-[700px]:relative -translate-y-1/2 top-1/2 left-0 right-0 z-10">
         <HeroImageShadow />
         <TinyFilledBox right={"10%"} top={"5%"} width={"60px"} />
         <TinyOpaqueBox right={"25%"} top={"5%"} width={"50px"} />
         <TinyOpaqueBox right={"45%"} top={"60%"} width={"95px"} />
         <TinyFilledBox right={"12%"} top={"28%"} width={"75px"} />
-        <div className="hello absolute top-[50px] left-[100px] z-[1] max-[830px]:left-[60px] max-[830px]:top-[35px]">
+        <div className="hello absolute top-[50px] left-[100px] z-[1] max-[830px]:left-[60px] max-[830px]:top-[35px] max-[700px]:left-0 max-[700px]:top-[90px] max-[700px]:right-0">
           <img
             src={HelloImage}
-            className="w-[780px] max-[830px]:w-[500px] block"
+            className="w-[780px] max-[830px]:w-[500px] block max-[700px]:m-auto"
           />
         </div>
-        <div className="relative flex z-10">
+        <div className="relative flex z-10 max-[700px]:grid max-[700px]:mt-20">
           {/* Hero Text Div Controller */}
-          <div className="relative z-10 left w-[48%] h-[75vh] px-[75px] max-[830px]:px-[50px] max-[700px]:px-[30px] bg-yellow-00">
-            <div className="relative grid gap-1 box-border w-[350px] max-[830px]:w-[300px] py-[25px] text-[15px] -translate-y-1/2 top-[55%]">
+          <div className="relative z-10 left w-[48%] h-[75vh] px-[75px] max-[830px]:px-[50px] max-[700px]:px-[30px]  max-[700px]:w-full max-[700px]:order-2 max-[700px]:h-auto max-[700px]:py-20">
+            <div className="relative grid gap-1 box-border w-[350px] max-[830px]:w-[300px] py-[25px] text-[15px] -translate-y-1/2 top-[55%] max-[700px]:w-full max-[700px]:top-0 max-[700px]:-translate-y-0 max-[700px]:py-1">
               <p className="text-white font-montserrat font-[400] text-[13px]">
                 UI/UX Designer
               </p>
@@ -73,15 +73,15 @@ export default function Main() {
             {/* div.content-box */}
           </div>
           {/* THE HERO IMAGE CONTROLLER DIV */}
-          <div className="right w-[52%] h-[75vh]">
-            <div className="relative max-w-[450px] bg-amber-00 w-[90%] h-full m-auto">
+          <div className="right w-[52%] h-[75vh] max-[700px]:order-1 max-[700px]:w-full max-[700px]:h-auto">
+            <div className="relative max-w-[450px]  w-[90%] h-full m-auto">
               <img
-                className="absolute  max-w-full pt-6 max-[830px]:pt-8"
+                className="absolute  max-w-full pt-6 max-[830px]:pt-8 max-[700px]:pt-0 max-[700px]:relative"
                 src={HeroUiImage}
                 alt=""
               />
               <img
-                className="absolute top-4.5 max-w-full pt-6  max-[830px]:pt-8"
+                className="absolute top-4.5 max-w-full pt-6  max-[830px]:pt-8 max-[700px]:pt-0"
                 src={HeroUiImageFrame}
                 alt=""
               />

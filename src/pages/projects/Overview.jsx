@@ -34,7 +34,7 @@ export default function Overview() {
             {currentProject.overviewIndustries?.map((industry) => (
               <span
                 key={v4()}
-                className="inline-block border-[#000000] border-[1px] px-2 py-2.5 rounded-full"
+                className="inline-block border-[#000000] border-[1px] px-2 py-2 rounded-full"
               >
                 {industry}
               </span>
