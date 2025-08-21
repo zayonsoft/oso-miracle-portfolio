@@ -25,10 +25,10 @@ export default function ProjectGoals() {
   }
   return (
     <section className="grid gap-10 font-inter w-[90%] box-border max-w-[800px] bg-red p-2 m-auto">
-      <h1 className="text-center font-medium text-3xl max-[750px]:text-2xl">
+      <h1 className="text-center font-medium text-3xl max-[750px]:text-xl">
         Your project goals...
       </h1>
-      <div className="grid gap-3 max-w-[500px] w-[90%] m-auto">
+      <div className="grid gap-3 max-w-[500px] w-[100%] m-auto">
         <p>
           <TextArea
             value={projectGoals.value}

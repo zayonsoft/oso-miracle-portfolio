@@ -40,7 +40,7 @@ export default function SpecificServices(props) {
 
   return (
     <section className="grid gap-10 font-inter p-2">
-      <h1 className="text-center font-medium text-3xl  max-[750px]:text-2xl">
+      <h1 className="text-center font-medium text-3xl  max-[750px]:text-xl">
         What specific services or products do you build? <br />
         Can I take a peek?
       </h1>

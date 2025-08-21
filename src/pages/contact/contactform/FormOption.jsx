@@ -14,14 +14,14 @@ export function FormOPtion({ id, value, selected, updateFunction }) {
         {!selected ? (
           <button
             type="button"
-            className="cursor-pointer block p-2 w-3 h-3 border max-[750px]:w-2.5 max-[750px]:h-2.5 border-[#0000004D] rounded-full"
+            className="cursor-pointer block box-border p-1.5 w-4 h-4 border max-[750px]:w-4 max-[750px]:h-4 border-[#0000004D] rounded-full"
           ></button>
         ) : (
           <button
             type="button"
-            className="grid text-white justify-center font-bold box-border content-center text-center cursor-pointer bg-[#448EF9] p-2 w-3 h-3 max-[750px]:w-2.5 max-[750px]:h-2.5 border border-[#448EF9] rounded-full"
+            className="grid text-white justify-center font-bold box-border content-center text-center cursor-pointer bg-[#448EF9] p-1.5 w-4 h-4 max-[750px]:w-4 max-[750px]:h-4 border border-[#448EF9] rounded-full"
           >
-            <Check size={10} strokeWidth={4} />
+            <Check size={9} strokeWidth={4} />
           </button>
         )}
 

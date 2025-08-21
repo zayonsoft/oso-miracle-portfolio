@@ -51,11 +51,11 @@ export default function ContactFormSection(props) {
   }
 
   return (
-    <section className="px-[75px] py-16 grid gap-5 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
-      <div className="p-5 rounded-4xl border-[#000000] border">
+    <section className="px-[75px] py-16 grid gap-5 bg-white max-[830px]:px-[50px] max-[700px]:px-[20px]">
+      <div className="p-5 rounded-4xl border-[#000000] border max-[700px]:p-3">
         <form
           onSubmit={(e) => submitAction(e)}
-          className="grid gap-11 w-[90%] box-border max-w-[800px] p-2 m-auto"
+          className="grid gap-11 w-[100%] box-border max-w-[800px] p-2 m-auto"
           action=""
         >
           <Introduction />
