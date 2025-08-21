@@ -16,6 +16,8 @@ export default function ContactFormSection(props) {
   const [modalOpen, setModalOpen] = useState(false);
   const openModal = () => setModalOpen(true);
   const handleClose = () => setModalOpen(false);
+
+  const [modalMessage, setModalMessage] = useState("");
   useEffect(() => {
     if (
       contactData.name &&
@@ -37,7 +39,15 @@ export default function ContactFormSection(props) {
 
   function submitAction(e) {
     e.preventDefault();
-    openModal();
+    if (formOkay) {
+      setModalMessage(
+        "Sorry, You cannot Proceed as this feature is still under maintenance"
+      );
+      openModal();
+    } else {
+      setModalMessage("Pls, Complete all Sections of the Form");
+      openModal();
+    }
   }
 
   return (
@@ -59,7 +69,7 @@ export default function ContactFormSection(props) {
         <MessageModal
           open={modalOpen}
           closeFunction={handleClose}
-          message={"This section is still under development."}
+          message={modalMessage}
         />
       </div>
     </section>
