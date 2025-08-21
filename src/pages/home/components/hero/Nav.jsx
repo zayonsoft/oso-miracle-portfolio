@@ -22,7 +22,7 @@ const navLinks = [
   { name: "Skills", path: "/#skills", toTop: false },
   { name: "Services", path: "/#services", toTop: false },
   { name: "My Work", path: "/#my_work", toTop: false },
-  { name: "Contact Me", path: "/#contact", toTop: false },
+  { name: "Contact Me", path: "/contact", toTop: false },
 ];
 export { navLinks };
 export default function Nav() {
@@ -66,7 +66,7 @@ export default function Nav() {
         ref={navRef}
         className={
           scrolled
-            ? `flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071aed] max-[700px]:z-[100000] max-[700px]:!fixed`
+            ? `fixed flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071aed] max-[700px]:z-[100000] max-[700px]:fixed`
             : `flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071aed] max-[700px]:z-[100000] max-[700px]:fixed`
         }
       >
