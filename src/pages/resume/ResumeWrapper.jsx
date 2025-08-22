@@ -71,8 +71,8 @@ export default function ResumeWrapper(props) {
           <h3 className="text-[25px] font-[350] text-[#3F424DCC] dark:text-[#FFFFFFCC] max-[650px]:text-[15px]">
             UI/UX Specialist, Product Designer
           </h3>
-          <div className="grid gap-1.5">
-            <p className="flex gap-3 items-center">
+          <div className="grid gap-4">
+            <p className="flex gap-3.5 items-center">
               <span className="text-[#D41503] dark:text-[#FDAEA7] text-xl w-8 h-8 max-[650px]:w-7 max-[650px]:h-7">
                 <FontAwesomeIcon icon={faLocationDot} />
               </span>
@@ -80,15 +80,15 @@ export default function ResumeWrapper(props) {
                 No 10, Araromi Qtrs, Akungba Akoko, Ondo State, Nigeria.{" "}
               </span>
             </p>
-            <p className="flex gap-3 items-center">
-              <span className="flex items-center justify-center bg-[#8D4DFD] p-1 rounded-full w-8 h-8 max-[650px]:w-7 max-[650px]:h-7 text-[#FFFFFF] text-[15px] max-[650px]:text-[12px]">
+            <p className="flex gap-3.5 items-center">
+              <span className="flex items-center justify-center bg-[#8D4DFD] p-3.5 rounded-full w-6 h-6 max-[650px]:w-6 max-[650px]:h-6 text-[#FFFFFF] text-[13px] max-[650px]:text-[11px]">
                 <FontAwesomeIcon icon={faEnvelope} />
               </span>
               <span className="text-[#050607] dark:text-[#FFFFFFCC] font-normal text-sm">
                 www.charlieputh062@gmail.com
               </span>
             </p>
-            <p className="flex gap-3 items-center">
+            <p className="flex gap-3.5 items-center">
               <span className="w-8 h-8 max-[650px]:w-7 max-[650px]:h-7 text-[#EA4C89] text-xl">
                 <FontAwesomeIcon icon={faPhone} />
               </span>

@@ -13,7 +13,7 @@ export default function ProjectsMain() {
           {/* Where the Image Will Sit */}
           <div className="relative max-h-full">
             <img
-              className="max-w-full block height-auto max-h-[100%]"
+              className="max-w-full block m-auto height-auto max-h-[100%]"
               src={currentProject.heroImage}
               alt=""
             />
