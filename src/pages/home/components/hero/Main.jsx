@@ -24,7 +24,7 @@ export default function Main() {
         <div className="hello absolute top-[50px] left-[100px] z-[1] max-[830px]:left-[60px] max-[830px]:top-[35px] max-[700px]:left-0 max-[700px]:top-[90px] max-[700px]:right-0">
           <img
             src={HelloImage}
-            className="w-[780px] max-[830px]:w-[500px] block max-[700px]:m-auto"
+            className="max-w-[780px] max-[830px]:max-w-[500px] block max-[700px]:m-auto w-full"
           />
         </div>
         <div className="relative flex z-10 max-[700px]:grid max-[700px]:mt-20">
@@ -34,7 +34,7 @@ export default function Main() {
               <p className="text-white font-montserrat font-[400] text-[13px]">
                 UI/UX Designer
               </p>
-              <p className="text-[38px] text-white font-montserrat font-bold">
+              <p className="text-[38px] text-white font-montserrat bg-red-5 h-28 font-bold">
                 <ReactTyped
                   strings={[
                     "Hi There, I'm<br/> <span class='text-[#175DC2]'>Miracle John</span>",
@@ -54,7 +54,7 @@ export default function Main() {
               <div className="flex gap-2 mt-7">
                 <a
                   onClick={(e) => navigateToLink(e)}
-                  className="bg-[#175DC2] text-white text-[11px] font-montserrat font-semibold p-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#175DC299]"
+                  className="bg-[#175DC2] text-white text-[11px] font-montserrat font-semibold p-[6px] py-[9px] w-[120px] transition ease-in-out duration-900 rounded-full block text-center hover:bg-[#175DC299]"
                   href="/contact"
                 >
                   {" "}
@@ -62,7 +62,7 @@ export default function Main() {
                 </a>
                 <a
                   onClick={(e) => navigateToLink(e)}
-                  className="bg-white text-[#1F1F1F] text-[11px] font-montserrat font-bold px-[6px] py-[9px] w-[120px] rounded-full block text-center hover:bg-[#FFFFFF99]"
+                  className="bg-white text-[#1F1F1F] text-[11px] font-montserrat font-bold px-[6px] py-[9px] w-[120px] transition ease-in-out duration-900 rounded-full block text-center hover:bg-[#FFFFFF99]"
                   href="/resume"
                 >
                   {" "}

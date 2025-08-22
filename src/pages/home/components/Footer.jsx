@@ -55,7 +55,7 @@ export default function Footer() {
         {neededIcons.map((icon) => (
           <p key={v4()}>
             <a
-              className="bg-white p-1.5 block text-black rounded-full border-[1px] border-white hover:bg-black hover:text-white"
+              className="bg-white p-1.5 block text-black transition ease-in-out duration-900 rounded-full border-[1px] border-white hover:bg-black hover:text-white"
               href=""
             >
               {" "}
@@ -65,7 +65,7 @@ export default function Footer() {
         ))}
       </div>
       <section className="grid content-center relative bg-[#121212] p-4 font-poppins font-normal text-white text-center">
-        <div className="text-sm">
+        <div className="text-sm  max-[450px]:text-xs">
           © 2025 <span className="font-semibold text-[#175DC2]">RIVERT</span>{" "}
           DESIGN All Rights Reserved , Inc.
         </div>

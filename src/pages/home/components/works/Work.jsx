@@ -23,7 +23,7 @@ export default function Work(props) {
     >
       <div className="grid gap-8 max-[571px]:order-2">
         <div className="grid gap-5 self-start">
-          <h1 className="font-semibold text-2xl max-[800px]:text-xl">
+          <h1 className="font-semibold text-2xl max-[800px]:text-xl  max-[350px]:text-lg">
             {props.name}
           </h1>
           <p className="text-[12px]">{props.details}</p>
@@ -41,7 +41,7 @@ export default function Work(props) {
         <p className="self-end">
           <button
             onClick={() => navigateToProject(props.id)}
-            className="flex text-sm border-[#000000] w-[150px] justify-center cursor-pointer hover:bg-[#175DC2] hover:border-[#175DC2] hover:text-white font-semibold border-[1px] px-1.5 py-2 rounded-full gap-2 max-[571px]:w-full"
+            className="flex text-sm border-[#000000] w-[150px] justify-center cursor-pointer transition ease-in-out duration-900 hover:bg-[#175DC2] hover:border-[#175DC2] hover:text-white font-semibold border-[1px] px-1.5 py-2 rounded-full gap-2 max-[571px]:w-full"
           >
             <span className="text-[12px]"> View Project</span>{" "}
             <span className="grid self-center">

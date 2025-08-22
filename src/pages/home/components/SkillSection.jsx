@@ -17,7 +17,7 @@ export default function SkillSection(props) {
         initial={{ opacity: 0, x: -70 }}
         animate={isInView ? { opacity: 1, x: 0 } : {}}
         transition={{ duration: 1.0, delay: 0.5 }}
-        className="max-w-[600px] object-center object-contain w-20% block m-auto  max-[601px]:max-w-[380px] skills-bg"
+        className="max-w-[600px] object-center object-contain w-[100%] block m-auto  max-[601px]:max-w-[380px] skills-bg"
         src={SkillImage}
         alt=""
       />

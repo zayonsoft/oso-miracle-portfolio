@@ -7,8 +7,8 @@ export default function Service(props) {
   return (
     <motion.div
       ref={ref}
-      initial={{ opacity: 0.2, x: -100 }}
-      animate={isInView ? { opacity: 1, x: 0 } : {}}
+      initial={{ opacity: 0.2, x: 100, y: 90 }}
+      animate={isInView ? { opacity: 1, x: 0, y: 0 } : {}}
       transition={{ duration: 1.0, delay: 0.5 }}
       className="grid gap-1.5 p-1 max-w-[350px] m-auto"
     >
