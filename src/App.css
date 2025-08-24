@@ -47,15 +47,15 @@
 }
 
 .font-montserrat {
-  font-family: montserrat;
+  font-family: montserrat, system-ui;
 }
 
 .font-inter {
-  font-family: inter;
+  font-family: inter, system-ui;
 }
 
 .font-poppins {
-  font-family: poppins;
+  font-family: poppins, system-ui;
 }
 
 .home-overlay {

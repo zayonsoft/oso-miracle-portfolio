@@ -13,7 +13,7 @@ export default function Overview() {
   return (
     <section className="px-[75px] py-10 grid gap-10 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
       {" "}
-      <div className="grid gap-5 m-auto">
+      <div className="grid gap-5 m-auto w-full">
         <h1 className="font-inter text-3xl font-normal text-left">Overview</h1>
 
         {currentProject.overviewParagraphs?.map((paragraphText) => (
@@ -58,7 +58,7 @@ export default function Overview() {
           initial={{ opacity: 0, y: 100 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="block m-auto max-w-full max-h-full rounded-[25px]"
+          className="block m-auto w-full max-h-full rounded-[25px]"
           src={currentProject.overviewImage}
           alt=""
         />

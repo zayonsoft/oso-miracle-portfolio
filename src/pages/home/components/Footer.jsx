@@ -4,12 +4,13 @@ import { v4 } from "uuid";
 import List from "./hero/List";
 import { FaFacebookF } from "react-icons/fa";
 import { SiInstagram, SiWhatsapp, SiX } from "react-icons/si";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, ChevronDown, ChevronUp } from "lucide-react";
 import "../styles/footer/footer.css";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import { HomeLinkContext } from "../../../contexts/HomeLinkContext";
-import { useContext } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import PoweredByZayonsoft from "../../PoweredByZayonSoft";
 
 export default function Footer() {
   const { setHomeLinkClicked } = useContext(HomeLinkContext);
@@ -21,6 +22,7 @@ export default function Footer() {
     setHomeLinkClicked(true);
     navigate(pathname);
   }
+  const [developerShown, setDeveloperShown] = useState(false);
 
   let neededIcons = [
     <FaFacebookF key={v4()} />,
@@ -64,11 +66,63 @@ export default function Footer() {
           </p>
         ))}
       </div>
-      <section className="grid content-center relative bg-[#121212] p-4 font-poppins font-normal text-white text-center">
-        <div className="text-sm  max-[450px]:text-xs">
-          © 2025 <span className="font-semibold text-[#175DC2]">RIVERT</span>{" "}
-          DESIGN All Rights Reserved , Inc.
+      <section
+        className={
+          "grid transition ease-in-out duration-900 content-center relative bg-[#121212] p-2 font-poppins font-normal text-white text-center"
+        }
+      >
+        <div className="max-[450px]:text-[11px]">
+          <div className="flex justify-center gap-1 items-center">
+            <div className="relative">
+              <div
+                style={{ transition: "1.5s ease" }}
+                className={
+                  !developerShown
+                    ? "opacity-100 justify-center leading-3.5 flex items-center min-w-52 gap-1 text-sm max-[490px]:grid max-[490px]:gap-0"
+                    : "opacity-0 justify-center flex items-center min-w-16 gap-1 text-sm max-[490px]:grid max-[490px]:gap-0"
+                }
+              >
+                <span>
+                  <span>© 2025 </span>
+                  <span className="font-semibold text-[#175DC2]">
+                    RIVERT
+                  </span>{" "}
+                  DESIGN
+                </span>
+                <span className="flex items-center gap-1">
+                  <span>All Rights Reserved , Inc.</span>
+                </span>
+              </div>
+
+              <div
+                style={{ transition: "0.9s ease" }}
+                className={
+                  developerShown
+                    ? "opacity-100 absolute top-1/2 -translate-y-1/2 left-0 right-0"
+                    : "opacity-0 absolute top-1/2 -translate-y-1/2 left-0 right-0"
+                }
+              >
+                <PoweredByZayonsoft shown={developerShown} />
+              </div>
+            </div>
+
+            <span>
+              <button
+                onClick={() => {
+                  setDeveloperShown(!developerShown);
+                }}
+                className="outline-none rounded-xl pointer animate-pulse p-1 transition ease-in-out duration-900 hover:bg-[#6060605d]"
+              >
+                {developerShown ? (
+                  <ChevronUp size={15} />
+                ) : (
+                  <ChevronDown size={15} />
+                )}
+              </button>
+            </span>
+          </div>
         </div>
+
         <div className="absolute justify-self-end self-center right-4">
           <div className="gradient-border animate-pulse rounded-full">
             <button

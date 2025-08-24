@@ -11,7 +11,7 @@ export default function ChallengeSolution() {
   const { currentProject } = useContext(ProjectContext);
   return (
     <section className="px-[75px] py-10 grid gap-10 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
-      <div className="grid gap-5 m-auto">
+      <div className="grid gap-5 m-auto w-full">
         <h1 className="font-inter text-3xl font-normal text-left">Challenge</h1>
         {currentProject.challengeParagrahs?.map((pText) => (
           <p
@@ -22,7 +22,7 @@ export default function ChallengeSolution() {
           </p>
         ))}
       </div>
-      <div className="grid gap-5 m-auto">
+      <div className="grid gap-5 m-auto w-full">
         <h1 className="font-inter text-3xl font-normal text-left">Solution</h1>
         {currentProject.solutionParagraphs?.map((pText) => (
           <p
@@ -41,7 +41,7 @@ export default function ChallengeSolution() {
           initial={{ opacity: 0, y: 100 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="m-auto "
+          className="m-auto w-full"
           src={currentProject.typographyImage}
           alt=""
         />

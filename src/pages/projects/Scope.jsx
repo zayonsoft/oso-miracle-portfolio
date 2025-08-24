@@ -13,7 +13,7 @@ export default function Scope() {
   const { currentProject } = useContext(ProjectContext);
   return (
     <section className="px-[75px] py-10 grid gap-10 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
-      <div className="grid gap-5 m-auto">
+      <div className="grid gap-5 m-auto w-full">
         <h1 className="font-inter text-3xl font-normal text-left">
           Product Scope
         </h1>
@@ -40,7 +40,7 @@ export default function Scope() {
             initial={{ opacity: 0, y: 100 }}
             animate={isInView1 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="m-auto max-w-full"
+            className="m-auto w-full"
             src={currentProject.scopeImage1}
             alt=""
           />
@@ -51,7 +51,7 @@ export default function Scope() {
             initial={{ opacity: 0, y: 100 }}
             animate={isInView2 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="m-auto max-w-full"
+            className="m-auto w-full"
             src={currentProject.scopeImage2}
             alt=""
           />
