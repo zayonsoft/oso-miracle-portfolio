@@ -78,8 +78,8 @@ export default function Footer() {
                 style={{ transition: "1.5s ease" }}
                 className={
                   !developerShown
-                    ? "opacity-100 justify-center leading-3.5 flex items-center min-w-52 gap-1 text-sm max-[490px]:grid max-[490px]:gap-0"
-                    : "opacity-0 justify-center flex items-center min-w-16 gap-1 text-sm max-[490px]:grid max-[490px]:gap-0"
+                    ? "opacity-100 justify-center leading-3.5 flex  items-center min-w-60 gap-1 text-sm max-[490px]:grid max-[490px]:gap-0"
+                    : "opacity-0 justify-center flex items-center  min-w-60 gap-1 text-sm max-[490px]:grid max-[490px]:gap-0"
                 }
               >
                 <span>

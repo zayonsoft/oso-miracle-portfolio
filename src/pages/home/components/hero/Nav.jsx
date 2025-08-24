@@ -69,7 +69,7 @@ export default function Nav() {
         className={
           scrolled
             ? `fixed flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071ad7] max-[700px]:z-[100000] max-[700px]:fixed`
-            : `flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071a91] max-[700px]:z-[100000] max-[700px]:fixed`
+            : `relative flex z-30 px-[75px] max-[830px]:px-[50px] py-[20px] max-[805px]:px-[40px] right-0 left-0 content-center  justify-between max-[700px]:grid max-[700px]:grid-cols-7 max-[700px]:px-[30px] max-[700px]:bg-[#01071a91] max-[700px]:z-[100000] max-[700px]:fixed`
         }
       >
         <div className="logo col-span-6">
