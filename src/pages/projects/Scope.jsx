@@ -13,7 +13,7 @@ export default function Scope() {
   const { currentProject } = useContext(ProjectContext);
   return (
     <section className="px-[75px] py-10 grid gap-10 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
-      <div className="grid gap-5 m-auto w-full">
+      <div className="grid px-10 gap-5 m-auto w-full">
         <h1 className="font-inter text-3xl font-normal text-left">
           Product Scope
         </h1>
@@ -21,7 +21,7 @@ export default function Scope() {
           {currentProject.scopeText}
         </p>
       </div>
-      <div className="grid grid-cols-2 font-inter text-[13px] gap-10 content-center max-[650px]:grid-cols-1">
+      <div className="grid grid-cols-2 px-10 font-inter text-[13px] gap-10 content-center max-[650px]:grid-cols-1">
         {currentProject.scopeParagraphs?.map((pText) => (
           <div key={v4()} className="grid gap-4">
             <span>

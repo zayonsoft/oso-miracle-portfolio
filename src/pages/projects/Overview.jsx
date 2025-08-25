@@ -13,7 +13,7 @@ export default function Overview() {
   return (
     <section className="px-[75px] py-10 grid gap-10 bg-white max-[830px]:px-[50px] max-[700px]:px-[30px]">
       {" "}
-      <div className="grid gap-5 m-auto w-full">
+      <div className="px-10 grid gap-5 m-auto w-full">
         <h1 className="font-inter text-3xl font-normal text-left">Overview</h1>
 
         {currentProject.overviewParagraphs?.map((paragraphText) => (
@@ -26,7 +26,7 @@ export default function Overview() {
           </p>
         ))}
       </div>{" "}
-      <div className="grid gap-5 grid-cols-2 font-inter max-[700px]:grid-cols-1">
+      <div className="grid gap-5 grid-cols-2 px-10 font-inter max-[700px]:grid-cols-1">
         <div className="grid gap-12 font-inter box-border justify-self-center w-full min-h-[120px] max-w-full p-5 border-[1px] border-[#000000] rounded-4xl">
           <p className="font-normal text-[21px]">Industry</p>
 

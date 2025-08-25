@@ -6,7 +6,7 @@ export default function ProjectsMain() {
   return (
     <>
       <main>
-        <div className="grid gap-12 content-start px-[75px] py-7 max-[830px]:px-[50px] max-[700px]:px-[30px]">
+        <div className="grid gap-16 content-start px-[75px] py-7 max-[830px]:px-[50px] max-[700px]:px-[30px]">
           <h1 className="text-white font-montserrat font-semibold text-2xl">
             {currentProject.projectName}
           </h1>
