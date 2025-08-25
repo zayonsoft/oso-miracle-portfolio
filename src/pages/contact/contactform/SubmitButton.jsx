@@ -16,7 +16,7 @@ export default function SubmitButton({ formOkay }) {
         onClick={() => {
           setClicked(true);
         }}
-        className="border border-black outline-none rounded-3xl p-1.5 font-montserrat font-semibold hover:border-[#448EF9] text-sm hover:bg-[#448EF9] hover:text-white"
+        className="border border-black outline-none transition ease-in-out duration-900 rounded-3xl p-1.5 font-montserrat font-semibold hover:border-[#448EF9] text-sm hover:bg-[#448EF9] hover:text-white"
       >
         {" "}
         Submit Form
