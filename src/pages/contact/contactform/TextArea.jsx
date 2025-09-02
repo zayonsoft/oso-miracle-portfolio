@@ -7,8 +7,8 @@ export default function TextArea({ value, placeholder, focused, onchange }) {
       }}
       className={
         focused && !value.trim()
-          ? "outline-none resize-none border w-full p-3 rounded-xl font-inter text-xs border-red-500 h-[35vh] placeholder:text-xs"
-          : "outline-none resize-none border w-full p-3 rounded-xl font-inter text-xs border-[#0000004D] focus:border-[#000000] h-[35vh] placeholder:text-xs"
+          ? "outline-none resize-none border w-full p-3 rounded-xl font-inter text-xs placeholder:text-[#bdbdbdb6] border-red-500 h-[35vh] placeholder:text-xs"
+          : "outline-none resize-none border w-full p-3 rounded-xl font-inter text-xs placeholder:text-[#bdbdbdb6] border-[#0000004D] focus:border-[#000000] h-[35vh] placeholder:text-xs"
       }
       name=""
       value={value}
