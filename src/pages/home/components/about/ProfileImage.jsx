@@ -1,6 +1,6 @@
 import ProfileImagePic from "../../styles/about/profile_image.svg";
 import ProfileBottom from "./ProfileBottom";
-import ProfilePicBlueDesign from "../../styles/about/about_under_image_line.svg";
+import ProfilePicBlueDesign from "../../styles/about/about_under_image_line.png";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 

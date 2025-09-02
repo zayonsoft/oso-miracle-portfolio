@@ -1,4 +1,4 @@
-import VShapeImage from "../../styles/about/v_shape_under_pic.png";
+import VShapeImage from "../../styles/about/v_shape_under_pic.svg";
 export default function ProfileBottom() {
   return (
     <>

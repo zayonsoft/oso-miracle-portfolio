@@ -9,7 +9,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 const LogoImage = (
   <img
-    className="cursor-pointer w-[130px] max-[805px]:w-[100px]"
+    className="cursor-pointer w-[145px] max-[805px]:w-[100px]"
     src={Logo}
     alt=""
   />
