@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import ZayonSoftLogo from "../assets/logo/zayonsoft_white_lemon.png";
+import ZayonSoftLogo from "/zayonsoft_white_lemon.png";
 export default function PoweredByZayonsoft() {
   const yearDeveloped = 2025;
   const currentYear = new Date().getFullYear();
