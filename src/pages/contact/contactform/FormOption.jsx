@@ -7,8 +7,8 @@ export function FormOPtion({ id, value, selected, updateFunction }) {
         onClick={() => updateFunction(id)}
         className={
           selected
-            ? "flex cursor-pointer items-center gap-3 rounded-4xl border outline-none font-normal font-inter border-[#0000004D] text-sm px-2.5 py-1.5 text-[#000000] max-[750px]:text-xs"
-            : "flex cursor-pointer items-center gap-3 rounded-4xl border outline-none font-normal font-inter border-[#0000004D] text-sm px-2.5 py-1.5 text-[#00000099] max-[750px]:text-xs"
+            ? "flex cursor-pointer items-center gap-3 rounded-4xl border outline-none font-normal font-inter border-[#0000004D] text-xs px-3 py-2 text-[#000000] max-[750px]:text-xs"
+            : "flex cursor-pointer items-center gap-3 rounded-4xl border outline-none font-normal font-inter border-[#0000004D] text-xs px-3 py-2 text-[#000000] max-[750px]:text-xs"
         }
       >
         {!selected ? (
