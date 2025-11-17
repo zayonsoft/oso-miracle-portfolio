@@ -54,9 +54,10 @@ export default function Work(props) {
       {/* This Div Contains The Image */}
       <div className="grid content-center max-[1000px]:content-start max-[571px]:order-1">
         <img
-          className="block justify-self-end rounded-4xl work-image-shadow w-full max-h-full object-center object-contain"
+          className="block justify-self-end rounded-4xl work-image-shadow w-full max-h-full object-center object-contain select-none"
           src={props.image}
-          alt=""
+          alt="Project Cover Image"
+          draggable={false}
         />
       </div>
     </motion.section>

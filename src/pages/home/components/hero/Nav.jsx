@@ -9,9 +9,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 const LogoImage = (
   <img
-    className="cursor-pointer w-[140px] max-[805px]:w-[100px]"
+    className="cursor-pointer w-[140px] max-[805px]:w-[100px] select-none"
     src={Logo}
-    alt=""
+    alt="Logo"
+    draggable={false}
   />
 );
 export { LogoImage };
@@ -73,11 +74,9 @@ export default function Nav() {
         }
       >
         <div className="logo col-span-6">
-          {" "}
-          <Link style={{ outline: "none" }} to={"/"}>
-            {" "}
+          <Link draggable={false} style={{ outline: "none" }} to={"/"}>
             {LogoImage}
-          </Link>{" "}
+          </Link>
         </div>
         {/* The DIV that contains the Menu Icon */}
         <div className="content-center hidden max-[700px]:block justify-self-end">

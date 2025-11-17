@@ -36,10 +36,9 @@ export default function Footer() {
       <div className="p-4">
         <div className="grid p-6">
           <div className="justify-self-center p-10">
-            <Link style={{ outline: "none" }} to={"/"}>
-              {" "}
+            <Link style={{ outline: "none" }} to={"/"} draggable={false}>
               {LogoImage}
-            </Link>{" "}
+            </Link>
           </div>
         </div>
         <ul className="flex  gap-3 flex-wrap justify-evenly content-center text-white font-medium font-montserrat w-11/12 max-w-[700px] m-auto ">
@@ -60,8 +59,7 @@ export default function Footer() {
               className="bg-white p-1.5 block text-black transition ease-in-out duration-900 rounded-full border-[1px] border-white hover:bg-black hover:text-white"
               href=""
             >
-              {" "}
-              {icon}{" "}
+              {icon}
             </a>
           </p>
         ))}

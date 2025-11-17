@@ -4,7 +4,7 @@ import { useRef } from "react";
 
 export default function AboutList(props) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: false, amount: 0.4 });
+  const isInView = useInView(ref, { once: false, amount: 0.3 });
   return (
     <motion.p
       ref={ref}
