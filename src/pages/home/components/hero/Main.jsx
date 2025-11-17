@@ -76,13 +76,15 @@ export default function Main() {
           <div className="right w-[52%] h-[75vh] max-[700px]:order-1 max-[700px]:w-full max-[700px]:h-auto">
             <div className="relative max-w-[450px]  w-[90%] h-full m-auto">
               <img
-                className="absolute  max-w-full pt-6 max-[830px]:pt-8 max-[700px]:pt-0 max-[700px]:relative"
+                className="absolute  max-w-full pt-6 max-[830px]:pt-8 max-[700px]:pt-0 max-[700px]:relative select-none"
                 src={HeroUiImage}
                 alt=""
+                draggable={false}
               />
               <img
-                className="absolute top-4.5 max-w-full pt-6  max-[830px]:pt-8 max-[700px]:pt-0"
+                className="absolute top-4.5 max-w-full pt-6  max-[830px]:pt-8 max-[700px]:pt-0 select-none"
                 src={HeroUiImageFrame}
+                draggable={false}
                 alt=""
               />
             </div>
