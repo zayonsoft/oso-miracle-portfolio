@@ -48,6 +48,7 @@ export default function Scope() {
             className="m-auto w-full select-none"
             src={currentProject.scopeImage1}
             alt="Scope Image1"
+            draggable={false}
           />
         </div>
         <div>
@@ -59,6 +60,7 @@ export default function Scope() {
             className="m-auto w-full select-none"
             src={currentProject.scopeImage2}
             alt="Scope Image2"
+            draggable={false}
           />
         </div>
       </div>
