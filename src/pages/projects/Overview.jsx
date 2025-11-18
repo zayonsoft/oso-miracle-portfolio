@@ -21,11 +21,10 @@ export default function Overview() {
             key={v4()}
             className="text-left font-inter text-[13px] font-normal"
           >
-            {" "}
-            {paragraphText}{" "}
+            {paragraphText}
           </p>
         ))}
-      </div>{" "}
+      </div>
       <div className="grid gap-5 grid-cols-2 px-10 font-inter max-[700px]:grid-cols-1">
         <div className="grid gap-12 font-inter box-border justify-self-center w-full min-h-[120px] max-w-full p-5 border-[1px] border-[#000000] rounded-4xl">
           <p className="font-normal text-[21px]">Industry</p>
@@ -46,7 +45,7 @@ export default function Overview() {
           <p className="font-normal text-[21px]">Technologies used</p>
           <p>
             <span className="inline-block p-1 rounded-full border border-black">
-              <img className="w-6" src={FigmaIcon} alt="" />
+              <img className="w-6 select-none" src={FigmaIcon} alt="Figma Icon" draggable={false} />
             </span>
           </p>
         </div>
@@ -58,9 +57,10 @@ export default function Overview() {
           initial={{ opacity: 0, y: 100 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.5 }}
-          className="block m-auto w-full max-h-full rounded-[25px]"
+          className="block m-auto w-full max-h-full rounded-[25px] select-none"
           src={currentProject.overviewImage}
-          alt=""
+          alt="Overview Image"
+          draggable={false}
         />
       </div>
     </section>

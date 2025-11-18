@@ -10,9 +10,10 @@ export default function VisualDesignImage({ src }) {
       initial={{ opacity: 0, y: 100 }}
       animate={isInView ? { opacity: 1, y: 0 } : {}}
       transition={{ duration: 0.8, delay: 0.5 }}
-      className="m-auto w-full"
+      className="m-auto w-full select-none"
       src={src}
-      alt=""
+      alt="Visual Design"
+      draggable={false}
     />
   );
 }

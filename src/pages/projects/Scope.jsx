@@ -25,7 +25,12 @@ export default function Scope() {
         {currentProject.scopeParagraphs?.map((pText) => (
           <div key={v4()} className="grid gap-4">
             <span>
-              <img className="w-8" src={ScopeIcon} alt="" />
+              <img
+                className="w-8 select-none"
+                src={ScopeIcon}
+                alt="Scope Icons"
+                draggable={false}
+              />
             </span>
             <p>{pText}</p>
           </div>
@@ -40,9 +45,9 @@ export default function Scope() {
             initial={{ opacity: 0, y: 100 }}
             animate={isInView1 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="m-auto w-full"
+            className="m-auto w-full select-none"
             src={currentProject.scopeImage1}
-            alt=""
+            alt="Scope Image1"
           />
         </div>
         <div>
@@ -51,9 +56,9 @@ export default function Scope() {
             initial={{ opacity: 0, y: 100 }}
             animate={isInView2 ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="m-auto w-full"
+            className="m-auto w-full select-none"
             src={currentProject.scopeImage2}
-            alt=""
+            alt="Scope Image2"
           />
         </div>
       </div>

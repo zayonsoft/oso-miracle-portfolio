@@ -13,9 +13,10 @@ export default function ProjectsMain() {
           {/* Where the Image Will Sit */}
           <div className="relative max-h-full">
             <img
-              className="w-full block m-auto height-auto max-h-[100%]"
+              className="w-full block m-auto height-auto max-h-[100%] select-none"
               src={currentProject.heroImage}
-              alt=""
+              draggable={false}
+              alt="Hero Image"
             />
           </div>
           <div className="flex justify-between font-inter text-[#FFFFFFCC]">
