@@ -12,6 +12,8 @@ import { useContext, useEffect } from "react";
 import { ProjectContext } from "./contexts/ProjectContext";
 import NotFound from "../../NotFound";
 
+import Nav from "../../pages/home/components/hero/Nav";
+
 export default function ProjectWrapper() {
   const { id } = useParams();
   const { currentProject, setCurrentProject } = useContext(ProjectContext);
@@ -20,7 +22,13 @@ export default function ProjectWrapper() {
     setCurrentProject(project || null);
   }, [id, currentProject, setCurrentProject]);
 
-  if (!currentProject) <NotFound />;
+  if (!currentProject)
+    return (
+      <div className="bg-[#01071a]">
+        <Nav />
+        <NotFound />
+      </div>
+    );
   if (currentProject.id == 0) {
     <div className="w-full h-screen bg-black grid content-center">
       <h1 className="text-white text-center text-4xl font-montserrat">
